@@ -1,22 +1,19 @@
 <template>
   <div>
-    <div class="top-right links">
-      <template v-if="authenticated">
+    <div >
         <router-link :to="{ name: 'home' }">
           {{ $t('home') }}
         </router-link>
-      </template>
-      <template v-else>
         <router-link :to="{ name: 'login' }">
           {{ $t('login') }}
         </router-link>
         <router-link :to="{ name: 'register' }">
           {{ $t('register') }}
         </router-link>
-      </template>
     </div>
 
     <div class="text-center">
+        <img src="~/static/map.png" class="img-responsive rounded-circle" alt="map" width="460" height="345">
       <div class="title">
         Expatso
       </div>
