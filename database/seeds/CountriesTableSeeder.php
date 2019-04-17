@@ -11,19 +11,15 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(CountriesTableSeeder::class);
-        //
+        $this->fillCountryCodes();
+    }
 
+    private function fillCountryCodes()
+    {
+        
+        DB::table('countries')->delete();
         $path = 'app/countries.sql';
         DB::unprepared(file_get_contents($path));
 
-       // DB::table('countries')->insert([
-       //     'id' => null,
-       //     'country_name' => 'Japan',
-       //     'country_code' => 'JP'
-       // ]);
     }
-
-
-
 }
