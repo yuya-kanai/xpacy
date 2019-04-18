@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/country', function (Request $request) {
+    return App\Country::all();
+});
+Route::get('/country/{id}', function (Request $request) {
+    return App\Country::all()->get(id);
+});
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('logout', 'Auth\LoginController@logout');
 
