@@ -42,6 +42,8 @@ class AddMoreDescription extends Migration
     public function down()
     {
         Schema::table('countries', function($table) {
+            $table->string('country_name')->unique();
+            $table->string('country_code');
             $table->dropColumn('countryName');
             $table->dropColumn('countryCode');
             $table->dropColumn('currencyCode');
