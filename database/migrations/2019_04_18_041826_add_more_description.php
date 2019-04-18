@@ -44,6 +44,19 @@ class AddMoreDescription extends Migration
         Schema::table('countries', function($table) {
             $table->dropColumn('countryName');
             $table->dropColumn('countryCode');
+            $table->dropColumn('currencyCode');
+            $table->dropColumn('fipsCode');
+            $table->dropColumn('isoNumeric');
+            $table->dropColumn('north');
+            $table->dropColumn('south');
+            $table->dropColumn('east');
+            $table->dropColumn('west'); 
+            $table->dropColumn('capital'); 
+            $table->dropColumn('continentName'); 
+            $table->dropColumn('continent');
+            $table->dropColumn('languages');
+            $table->dropColumn('isoAlpha3');
+            $table->dropColumn('geonameId');
         });
     }
 }
