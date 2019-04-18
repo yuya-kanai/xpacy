@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "generate": "nuxt generate -c client/nuxt.config.js",
     "dev": "nuxt -c client/nuxt.config.js",
     "build": "nuxt build -c client/nuxt.config.js",
     "start": "nuxt start -c client/nuxt.config.js",
