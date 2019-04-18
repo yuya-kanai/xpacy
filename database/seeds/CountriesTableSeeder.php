@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+include 'list.php';
 class CountriesTableSeeder extends Seeder
 {
     /**
@@ -11,7 +11,8 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $this->fillCountryCodes();
+        addCountries();
+        // $this->fillCountryCodes();
     }
 
     private function fillCountryCodes()
@@ -19,7 +20,14 @@ class CountriesTableSeeder extends Seeder
         
         DB::table('countries')->delete();
         $path = 'app/countries.sql';
-        DB::unprepared(file_get_contents($path));
+        // DB::unprepared(file_get_contents($path));
+        App\Country::create( [
+            'country_code'=>'AD',
+            'country_name'=>'Andorra',
+        ] );
+                
+    } 
 
-    }
 }
+
+    
