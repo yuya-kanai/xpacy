@@ -1,2 +1,2 @@
 # Xpacy
-Cost of listing website
+Cost of living listing website
