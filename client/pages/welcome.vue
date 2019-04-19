@@ -10,6 +10,7 @@
         <router-link :to="{ name: 'register' }">
           {{ $t('register') }}
         </router-link>
+        <button v-on:click="getCountries">Country</button>
     </div>
 
     <div class="text-center">
@@ -34,6 +35,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import axios from 'axios'
 
 export default {
   layout: 'simple',
@@ -42,13 +44,28 @@ export default {
     return { title: this.$t('home') }
   },
 
-  data: () => ({
-    title: process.env.appName
+  data: () => (
+  {
+    title: process.env.appName,
+    URL_BASE : process.env.apiUrl
   }),
 
   computed: mapGetters({
     authenticated: 'auth/check'
-  })
+  }),
+  methods: {
+    getCountries () {
+      // Submit the form via a POST request
+      //let URL_BASE = process.env.APP_URL
+      console.log(this.URL_BASE + '/country')
+      axios.get(this.URL_BASE + '/country')
+      .then((res) => {
+        console.log(res) 
+      })
+      //this.form.get('/country')
+      //  .then(({ data }) => { console.log(data) })
+    }
+  } 
 }
 </script>
 
