@@ -12,13 +12,16 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::resource('countries', 'countryController')->only([
+    'index', 'show'
+]);
 
-Route::get('/country', function (Request $request) {
-    return App\Country::all();
-});
-Route::get('/country/{id}', function (Request $request) {
-    return App\Country::all()->get(id);
-});
+// Route::get('/country', function (Request $request) {
+//     return App\Country::all();
+// });
+// Route::get('/country/{id}', function (Request $request) {
+//     return App\Country::all()->get(id);
+// });
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('logout', 'Auth\LoginController@logout');
 
