@@ -19,11 +19,13 @@
     "dotenv": "^5.0.1",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.0",
+    "leaflet": "^1.4.0",
     "nuxt": "^1.4.0",
     "popper.js": "^1.14.3",
     "sweetalert2": "^7.19.3",
     "vform": "^1.0.0",
-    "vue-i18n": "^7.6.0"
+    "vue-i18n": "^7.6.0",
+    "vue2-leaflet": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "^3.0.0-beta.9",
