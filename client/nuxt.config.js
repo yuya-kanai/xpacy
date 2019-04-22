@@ -57,7 +57,8 @@ module.exports = {
     '~plugins/axios',
     '~plugins/fontawesome',
     // '~plugins/nuxt-client-init',
-    { src: '~plugins/bootstrap', ssr: false }
+    { src: '~plugins/bootstrap', ssr: false },
+    {src: '~/plugins/leaflet', ssr: false }
   ],
 
   modules: [

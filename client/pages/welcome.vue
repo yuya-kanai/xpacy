@@ -7,6 +7,9 @@
         <router-link :to="{ name: 'login' }">
           {{ $t('login') }}
         </router-link>
+        <router-link :to="{ name: 'map' }">
+          {{ $t('map') }}
+        </router-link>
         <router-link :to="{ name: 'register' }">
           {{ $t('register') }}
         </router-link>
