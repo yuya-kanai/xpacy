@@ -33,7 +33,7 @@ class FixCountriesToSnakeCase extends Migration
      */
     public function down()
     {
-        Schema::table('stnk', function(Blueprint $table) {
+        Schema::table('countries', function(Blueprint $table) {
             $table->renameColumn('country_code', 'countryCode');
             $table->renameColumn('country_name', 'countryName');
             $table->renameColumn('currency_code', 'currencyCode'); 
