@@ -1,54 +1,54 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
-// state
+// State
 export const state = () => ({
-  user: null,
-  token: null
+  user  : null,
+  token : null
 })
 
-// getters
+// Getters
 export const getters = {
-  user: state => state.user,
-  token: state => state.token,
-  check: state => state.user !== null
+  user  : state => state.user,
+  token : state => state.token,
+  check : state => state.user !== null
 }
 
-// mutations
+// Mutations
 export const mutations = {
-  SET_TOKEN (state, token) {
+  SET_TOKEN(state, token) {
     state.token = token
   },
 
-  FETCH_USER_SUCCESS (state, user) {
+  FETCH_USER_SUCCESS(state, user) {
     state.user = user
   },
 
-  FETCH_USER_FAILURE (state) {
+  FETCH_USER_FAILURE(state) {
     state.token = null
   },
 
-  LOGOUT (state) {
+  LOGOUT(state) {
     state.user = null
     state.token = null
   },
 
-  UPDATE_USER (state, { user }) {
+  UPDATE_USER(state, {user}) {
     state.user = user
   }
 }
 
-// actions
+// Actions
 export const actions = {
-  saveToken ({ commit, dispatch }, { token, remember }) {
+  saveToken({commit}, {token, remember}) {
     commit('SET_TOKEN', token)
 
-    Cookies.set('token', token, { expires: remember ? 365 : null })
+    Cookies.set('token', token, {expires : remember ? 365 : null})
   },
 
-  async fetchUser ({ commit }) {
+  async fetchUser({commit}) {
     try {
-      const { data } = await axios.get('/user')
+      const {data} = await axios.get('/user')
 
       commit('FETCH_USER_SUCCESS', data)
     } catch (e) {
@@ -58,22 +58,24 @@ export const actions = {
     }
   },
 
-  updateUser ({ commit }, payload) {
+  updateUser({commit}, payload) {
     commit('UPDATE_USER', payload)
   },
 
-  async logout ({ commit }) {
+  async logout({commit}) {
     try {
       await axios.post('/logout')
-    } catch (e) { }
+    } catch (e) {
+      return
+    }
 
     Cookies.remove('token')
 
     commit('LOGOUT')
   },
 
-  async fetchOauthUrl (ctx, { provider }) {
-    const { data } = await axios.post(`/oauth/${provider}`)
+  async fetchOauthUrl(ctx, {provider}) {
+    const {data} = await axios.post(`/oauth/${provider}`)
 
     return data.url
   }

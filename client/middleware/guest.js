@@ -1,4 +1,4 @@
-export default ({ store, redirect }) => {
+export default ({store, redirect}) => {
   if (store.getters['auth/check']) {
     return redirect('/')
   }

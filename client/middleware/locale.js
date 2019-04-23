@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { loadMessages } from '~/plugins/i18n'
+import {loadMessages} from '~/plugins/i18n'
 
-export default async ({ store }) => {
+export default async ({store}) => {
   if (process.server) {
     const locale = store.getters['lang/locale']
     if (locale) {

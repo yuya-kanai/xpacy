@@ -11,9 +11,9 @@
           {{ $t('map') }}
         </router-link>
         <router-link :to="{ name: 'register' }">
-          {{ $t('register') }}
+          {{ $t("register") }}
         </router-link>
-        <button v-on:click="getCountries">Country</button>
+        <button @click="getCountries">Country</button>
     </div>
 
     <div class="text-center">

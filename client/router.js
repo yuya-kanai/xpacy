@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { scrollBehavior } from '~/utils'
+import {scrollBehavior} from '~/utils'
 
 Vue.use(Router)
 
@@ -18,28 +18,24 @@ const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.def
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
 
 const routes = [
-  { path: '/', name: 'welcome', component: Welcome },
-  { path: '/home', name: 'home', component: Home },
-  { path: '/map', name: 'map', component: Map },
+  {path : '/', name : 'welcome', component : Welcome},
+  {path : '/home', name : 'home', component : Home},
+  {path : '/map', name : 'map', component : Map},
 
-  { path: '/login', name: 'login', component: Login },
-  { path: '/register', name: 'register', component: Register },
-  { path: '/password/reset', name: 'password.request', component: PasswordRequest },
-  { path: '/password/reset/:token', name: 'password.reset', component: PasswordReset },
+  {path : '/login', name : 'login', component : Login},
+  {path : '/register', name : 'register', component : Register},
+  {path : '/password/reset', name : 'password.request', component : PasswordRequest},
+  {path : '/password/reset/:token', name : 'password.reset', component : PasswordReset},
 
-  { path: '/settings',
-    component: Settings,
-    children: [
-      { path: '', redirect: { name: 'settings.profile' } },
-      { path: 'profile', name: 'settings.profile', component: SettingsProfile },
-      { path: 'password', name: 'settings.password', component: SettingsPassword }
-    ] }
+  {path      : '/settings',
+    component : Settings,
+    children  : [{path : '', redirect : {name : 'settings.profile'}}, {path : 'profile', name : 'settings.profile', component : SettingsProfile}, {path : 'password', name : 'settings.password', component : SettingsPassword}]}
 ]
 
-export function createRouter () {
+export function createRouter() {
   return new Router({
     routes,
     scrollBehavior,
-    mode: 'history'
+    mode : 'history'
   })
 }

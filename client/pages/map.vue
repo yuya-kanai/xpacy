@@ -17,7 +17,7 @@ export default {
   data: () => ({
     position: [55.607741796855734, 13.018133640289308],
     draggable: true,
-    popupContent: "Sentian HQ"
+    popupContent: 'Sentian HQ'
   }),
   methods: {
     logPosition() {

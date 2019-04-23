@@ -56,13 +56,9 @@ class ScrapeRestaurants extends Command
     private function selenium(){
         // selenium
         $host = 'http://localhost:4444/wd/hub';
-        // chrome ドライバーの起動
         $driver = RemoteWebDriver::create($host,DesiredCapabilities::chrome());
-        // 画面サイズをMAXに
         $driver->manage()->window()->maximize();
-        // 指定URLへ遷移 (Google)
         $driver->get('https://www.tripadvisor.com/Restaurants');
-        // 検索Box
         $element = $driver->findElement(WebDriverBy::name('q'));
         // 検索Boxにキーワードを入力して
         $element->sendKeys('セレニウムで自動操作');

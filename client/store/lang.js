@@ -1,33 +1,33 @@
 import Cookies from 'js-cookie'
 
-// state
+// State
 export const state = () => ({
-  locale: process.env.appLocale,
-  locales: {
-    'en': 'EN',
-    'zh-CN': '中文',
-    'es': 'ES'
+  locale  : process.env.appLocale,
+  locales : {
+    en      : 'EN',
+    'zh-CN' : '中文',
+    es      : 'ES'
   }
 })
 
-// getters
+// Getters
 export const getters = {
-  locale: state => state.locale,
-  locales: state => state.locales
+  locale  : state => state.locale,
+  locales : state => state.locales
 }
 
-// mutations
+// Mutations
 export const mutations = {
-  SET_LOCALE (state, { locale }) {
+  SET_LOCALE(state, {locale}) {
     state.locale = locale
   }
 }
 
-// actions
+// Actions
 export const actions = {
-  setLocale ({ commit }, { locale }) {
-    commit('SET_LOCALE', { locale })
+  setLocale({commit}, {locale}) {
+    commit('SET_LOCALE', {locale})
 
-    Cookies.set('locale', locale, { expires: 365 })
+    Cookies.set('locale', locale, {expires : 365})
   }
 }
