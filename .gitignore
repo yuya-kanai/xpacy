@@ -15,4 +15,5 @@ yarn-error.log
 /dist
 /public/_nuxt
 *.jar
+*.swp
 chromedriver
