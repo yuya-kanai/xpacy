@@ -111,7 +111,6 @@ class ScrapeRestaurants extends Command
         $midrange = "//div[@id='jfy_filter_bar_price']/div[2]/div[1]/div";
 
         $this->clickWithXpath($restaurant_checkbox); 
-        $this->clickWithXpath($restaurant_checkbox); 
         
         $this->clickWithXpath($cheap);
         $this->clickWithXpath($midrange);
