@@ -77,7 +77,7 @@ class ScrapeRestaurants extends Command
         }
     }
 
-    private function getSrcWithXpath(String $xpath)
+    private function getWithXpath( String $attribute ,String $xpath)
     {
         $xpath_web = WebDriverBy::xpath(
             $xpath
@@ -88,8 +88,8 @@ class ScrapeRestaurants extends Command
                     $xpath
                 )
             );
-            echo($element->getAttribute("src"));
-            return $element->getAttribute("src");
+            echo($element->getAttribute($attribute));
+            return $element->getAttribute($attribute);
         }
         echo('not found'. $xpath);
         return null;
@@ -135,7 +135,7 @@ class ScrapeRestaurants extends Command
             $this->driver->switchTo()->window($tab);
             $price_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div[2]";
             $map_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
-            $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
+            $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/div/a";
             $image_xpath = "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
 
             $current_url = $this->driver->getCurrentURL();
@@ -147,9 +147,11 @@ class ScrapeRestaurants extends Command
                 echo('ho!!');
                 $element=$this->driver->findElement($xpath_web);
                 $price = $element->getText();
-                $mapURL = $this->getSrcWithXpath($map_xpath);
+                $map_url = $this->getWithXpath('src',$map_xpath);
+                $website_xpath = $this->getWithXpath('href',$website_xpath);
+                $image_xpath = $this->getWithXpath('src',$image_xpath);
                 echo($element->getText());
-                echo($mapURL);
+                echo($map_url);
             }
         }
     }
