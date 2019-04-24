@@ -13,8 +13,8 @@ class FixCountryIdToSnakeCase extends Migration
      */
     public function up()
     {
-        Schema::table('countries', function(Blueprint $table) {
-            $table->renameColumn('ID','id');
+        Schema::table('countries', function (Blueprint $table) {
+            $table->renameColumn('ID', 'id');
         });
         //
     }
@@ -26,8 +26,8 @@ class FixCountryIdToSnakeCase extends Migration
      */
     public function down()
     {
-        Schema::table('countries', function(Blueprint $table) {
-            $table->renameColumn('id','ID');
+        Schema::table('countries', function (Blueprint $table) {
+            $table->renameColumn('id', 'ID');
         });
     }
 }

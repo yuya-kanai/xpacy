@@ -13,13 +13,12 @@ class FixHousingsToSnakeCase extends Migration
      */
     public function up()
     {
-        Schema::table('housings', function(Blueprint $table) {
-            $table->renameColumn('ID','id'); 
-            $table->renameColumn('countryID','country_id'); 
-            $table->renameColumn('pictureURL','picture_url');
-            $table->renameColumn('URL','url');
+        Schema::table('housings', function (Blueprint $table) {
+            $table->renameColumn('ID', 'id');
+            $table->renameColumn('countryID', 'country_id');
+            $table->renameColumn('pictureURL', 'picture_url');
+            $table->renameColumn('URL', 'url');
         });
-
     }
 
     /**
@@ -29,11 +28,11 @@ class FixHousingsToSnakeCase extends Migration
      */
     public function down()
     {
-        Schema::table('housings', function(Blueprint $table) {
-            $table->renameColumn('id','ID'); 
-            $table->renameColumn('country_id','countryID'); 
-            $table->renameColumn('picture_url','pictureURL');
-            $table->renameColumn('url','URL');
+        Schema::table('housings', function (Blueprint $table) {
+            $table->renameColumn('id', 'ID');
+            $table->renameColumn('country_id', 'countryID');
+            $table->renameColumn('picture_url', 'pictureURL');
+            $table->renameColumn('url', 'URL');
         });
         //
     }

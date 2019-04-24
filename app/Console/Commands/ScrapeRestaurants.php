@@ -35,7 +35,7 @@ class ScrapeRestaurants extends Command
     {
         parent::__construct();
         $host = 'http://localhost:4444/wd/hub';
-        $this->driver = RemoteWebDriver::create($host,DesiredCapabilities::chrome());
+        $this->driver = RemoteWebDriver::create($host, DesiredCapabilities::chrome());
         $this->driver->manage()->window()->maximize();
         $this->driver->get('https://www.tripadvisor.com/Restaurants');
     }
@@ -58,12 +58,13 @@ class ScrapeRestaurants extends Command
         // });
         //
     }
-    private function clickWithXpath(String $xpath){
+    private function clickWithXpath(String $xpath)
+    {
         $xpath_web = WebDriverBy::xpath(
             $xpath
         );
 
-        if( count($this->driver->findElements($xpath_web)) > 0 ) {
+        if (count($this->driver->findElements($xpath_web)) > 0) {
             $element = $this->driver->findElement(
                 WebDriverBy::xpath(
                     $xpath
@@ -72,16 +73,16 @@ class ScrapeRestaurants extends Command
             $element->click();
             $current_handle = $this->driver->getWindowHandles();
             echo("Current : ".count($current_handle)."\r\n");
-        }else{
+        } else {
         }
-     
     }
 
-    private function getSrcWithXpath(String $xpath){
+    private function getSrcWithXpath(String $xpath)
+    {
         $xpath_web = WebDriverBy::xpath(
             $xpath
         );
-        if( count($this->driver->findElements($xpath_web)) > 0 ) {
+        if (count($this->driver->findElements($xpath_web)) > 0) {
             $element = $this->driver->findElement(
                 WebDriverBy::xpath(
                     $xpath
@@ -92,15 +93,15 @@ class ScrapeRestaurants extends Command
         }
         echo('not found'. $xpath);
         return null;
-     
     }
 
-    private function selenium(){
+    private function selenium()
+    {
         $search_box = $this->driver->findElement(WebDriverBy::cssSelector('.typeahead_input'));
         $search_box->sendKeys('Chiang Mai');
 
         $submit_button = $this->driver->findElement(WebDriverBy::cssSelector('#SUBMIT_RESTAURANTS'));
-        $submit_button->click(); 
+        $submit_button->click();
 
         $this->driver->wait(10, 500)->until(
             WebDriverExpectedCondition::titleContains('BEST Restaurants')
@@ -110,7 +111,7 @@ class ScrapeRestaurants extends Command
         $cheap = "//div[@id='jfy_filter_bar_price']/div[2]/div[1]/div";
         $midrange = "//div[@id='jfy_filter_bar_price']/div[2]/div[1]/div";
 
-        $this->clickWithXpath($restaurant_checkbox); 
+        $this->clickWithXpath($restaurant_checkbox);
         
         $this->clickWithXpath($cheap);
         $this->clickWithXpath($midrange);
@@ -142,17 +143,14 @@ class ScrapeRestaurants extends Command
             $price=null;
             $latitude=null;
             $longitude=null;
-            if( count($this->driver->findElements($xpath_web)) > 0 ) {
+            if (count($this->driver->findElements($xpath_web)) > 0) {
                 echo('ho!!');
                 $element=$this->driver->findElement($xpath_web);
                 $price = $element->getText();
                 $mapURL = $this->getSrcWithXpath($map_xpath);
                 echo($element->getText());
                 echo($mapURL);
-
             }
-
         }
-                
     }
 }

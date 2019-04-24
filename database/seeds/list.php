@@ -1,7 +1,7 @@
-<?php 
+<?php
 
-function addCountries(){
-
+function addCountries()
+{
     App\Country::create([
     'countryCode'=>'AD',
     'countryName'=>'Andorra',
@@ -20,7 +20,7 @@ function addCountries(){
     'geonameId'=>3041565
     ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AE',
     'countryName'=>'United Arab Emirates',
     'currencyCode'=>'AED',
@@ -36,9 +36,9 @@ function addCountries(){
     'languages'=>'ar-AE,fa,en,hi,ur',
     'isoAlpha3'=>'ARE',
     'geonameId'=>290557
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AF',
     'countryName'=>'Afghanistan',
     'currencyCode'=>'AFN',
@@ -54,9 +54,9 @@ function addCountries(){
     'languages'=>'fa-AF,ps,uz-AF,tk',
     'isoAlpha3'=>'AFG',
     'geonameId'=>1149361
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AG',
     'countryName'=>'Antigua and Barbuda',
     'currencyCode'=>'XCD',
@@ -74,9 +74,9 @@ function addCountries(){
     'geonameId'=>'en-AG',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AI',
     'countryName'=>'Anguilla',
     'currencyCode'=>'XCD',
@@ -94,9 +94,9 @@ function addCountries(){
     'geonameId'=>'en-AI',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AL',
     'countryName'=>'Albania',
     'currencyCode'=>'ALL',
@@ -112,9 +112,9 @@ function addCountries(){
     'languages'=>'sq,el',
     'isoAlpha3'=>'ALB',
     'geonameId'=>783754
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AM',
     'countryName'=>'Armenia',
     'currencyCode'=>'AMD',
@@ -130,9 +130,9 @@ function addCountries(){
     'languages'=>'hy',
     'isoAlpha3'=>'ARM',
     'geonameId'=>174982
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AO',
     'countryName'=>'Angola',
     'currencyCode'=>'AOA',
@@ -150,9 +150,9 @@ function addCountries(){
     'geonameId'=>'pt-AO',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AQ',
     'countryName'=>'Antarctica',
     'currencyCode'=>'',
@@ -171,9 +171,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AR',
     'countryName'=>'Argentina',
     'currencyCode'=>'ARS',
@@ -193,9 +193,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AS',
     'countryName'=>'American Samoa',
     'currencyCode'=>'USD',
@@ -215,9 +215,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AT',
     'countryName'=>'Austria',
     'currencyCode'=>'EUR',
@@ -233,9 +233,9 @@ function addCountries(){
     'languages'=>'de-AT,hr,hu,sl',
     'isoAlpha3'=>'AUT',
     'geonameId'=>2782113
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AU',
     'countryName'=>'Australia',
     'currencyCode'=>'AUD',
@@ -253,9 +253,9 @@ function addCountries(){
     'geonameId'=>'en-AU',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AW',
     'countryName'=>'Aruba',
     'currencyCode'=>'AWG',
@@ -273,9 +273,9 @@ function addCountries(){
     'geonameId'=>'nl-AW,es,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AX',
     'countryName'=>'Åland Islands',
     'currencyCode'=>'EUR',
@@ -291,9 +291,9 @@ function addCountries(){
     'languages'=>'sv-AX',
     'isoAlpha3'=>'ALA',
     'geonameId'=>661882
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'AZ',
     'countryName'=>'Azerbaijan',
     'currencyCode'=>'AZN',
@@ -309,9 +309,9 @@ function addCountries(){
     'languages'=>'az,ru,hy',
     'isoAlpha3'=>'AZE',
     'geonameId'=>587116
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BA',
     'countryName'=>'Bosnia and Herzegovina',
     'currencyCode'=>'BAM',
@@ -327,9 +327,9 @@ function addCountries(){
     'languages'=>'bs,hr-BA,sr-BA',
     'isoAlpha3'=>'BIH',
     'geonameId'=>3277605
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BB',
     'countryName'=>'Barbados',
     'currencyCode'=>'BBD',
@@ -347,9 +347,9 @@ function addCountries(){
     'geonameId'=>'en-BB',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BD',
     'countryName'=>'Bangladesh',
     'currencyCode'=>'BDT',
@@ -365,9 +365,9 @@ function addCountries(){
     'languages'=>'bn-BD,en',
     'isoAlpha3'=>'BGD',
     'geonameId'=>1210997
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BE',
     'countryName'=>'Belgium',
     'currencyCode'=>'EUR',
@@ -383,9 +383,9 @@ function addCountries(){
     'languages'=>'nl-BE,fr-BE,de-BE',
     'isoAlpha3'=>'BEL',
     'geonameId'=>2802361
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BF',
     'countryName'=>'Burkina Faso',
     'currencyCode'=>'XOF',
@@ -402,9 +402,9 @@ function addCountries(){
     'isoAlpha3'=>'fr-BF',
     'geonameId'=>'BFA',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BG',
     'countryName'=>'Bulgaria',
     'currencyCode'=>'BGN',
@@ -420,9 +420,9 @@ function addCountries(){
     'languages'=>'bg,tr-BG,rom',
     'isoAlpha3'=>'BGR',
     'geonameId'=>732800
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BH',
     'countryName'=>'Bahrain',
     'currencyCode'=>'BHD',
@@ -438,9 +438,9 @@ function addCountries(){
     'languages'=>'ar-BH,en,fa,ur',
     'isoAlpha3'=>'BHR',
     'geonameId'=>290291
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BI',
     'countryName'=>'Burundi',
     'currencyCode'=>'BIF',
@@ -458,9 +458,9 @@ function addCountries(){
     'geonameId'=>'fr-BI,rn',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BJ',
     'countryName'=>'Benin',
     'currencyCode'=>'XOF',
@@ -476,9 +476,9 @@ function addCountries(){
     'languages'=>'fr-BJ',
     'isoAlpha3'=>'BEN',
     'geonameId'=>2395170
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BL',
     'countryName'=>'Saint Barthélemy',
     'currencyCode'=>'EUR',
@@ -496,9 +496,9 @@ function addCountries(){
     'geonameId'=>'fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BM',
     'countryName'=>'Bermuda',
     'currencyCode'=>'BMD',
@@ -516,9 +516,9 @@ function addCountries(){
     'geonameId'=>'en-BM,pt',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BN',
     'countryName'=>'Brunei Darussalam',
     'currencyCode'=>'BND',
@@ -534,9 +534,9 @@ function addCountries(){
     'languages'=>'ms-BN,en-BN',
     'isoAlpha3'=>'BRN',
     'geonameId'=>1820814
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BO',
     'countryName'=>'Bolivia',
     'currencyCode'=>'BOB',
@@ -556,9 +556,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BQ',
     'countryName'=>'Bonaire, Sint Eustatius and Saba',
     'currencyCode'=>'USD',
@@ -576,9 +576,9 @@ function addCountries(){
     'geonameId'=>'nl,pap,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BR',
     'countryName'=>'Brazil',
     'currencyCode'=>'BRL',
@@ -597,9 +597,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BS',
     'countryName'=>'Bahamas',
     'currencyCode'=>'BSD',
@@ -617,9 +617,9 @@ function addCountries(){
     'geonameId'=>'en-BS',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BT',
     'countryName'=>'Bhutan',
     'currencyCode'=>'BTN',
@@ -635,9 +635,9 @@ function addCountries(){
     'languages'=>'dz',
     'isoAlpha3'=>'BTN',
     'geonameId'=>1252634
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BV',
     'countryName'=>'Bouvet Island',
     'currencyCode'=>'NOK',
@@ -655,9 +655,9 @@ function addCountries(){
     'geonameId'=>'',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BW',
     'countryName'=>'Botswana',
     'currencyCode'=>'BWP',
@@ -675,9 +675,9 @@ function addCountries(){
     'geonameId'=>'en-BW,tn-BW',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BY',
     'countryName'=>'Belarus',
     'currencyCode'=>'BYR',
@@ -693,9 +693,9 @@ function addCountries(){
     'languages'=>'be,ru',
     'isoAlpha3'=>'BLR',
     'geonameId'=>630336
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'BZ',
     'countryName'=>'Belize',
     'currencyCode'=>'BZD',
@@ -713,9 +713,9 @@ function addCountries(){
     'geonameId'=>'en-BZ,es',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CA',
     'countryName'=>'Canada',
     'currencyCode'=>'CAD',
@@ -733,9 +733,9 @@ function addCountries(){
     'geonameId'=>'en-CA,fr-CA,iu',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CC',
     'countryName'=>'Cocos [Keeling] Islands',
     'currencyCode'=>'AUD',
@@ -753,9 +753,9 @@ function addCountries(){
     'geonameId'=>'ms-CC,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CD',
     'countryName'=>'Democratic Republic of the Congo',
     'currencyCode'=>'CDF',
@@ -772,9 +772,9 @@ function addCountries(){
     'isoAlpha3'=>'fr-CD,ln,kg',
     'geonameId'=>'COD',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CF',
     'countryName'=>'Central African Republic',
     'currencyCode'=>'XAF',
@@ -790,9 +790,9 @@ function addCountries(){
     'languages'=>'fr-CF,sg,ln,kg',
     'isoAlpha3'=>'CAF',
     'geonameId'=>239880
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CG',
     'countryName'=>'Republic of the Congo',
     'currencyCode'=>'XAF',
@@ -809,9 +809,9 @@ function addCountries(){
     'isoAlpha3'=>'fr-CG,kg,ln-CG',
     'geonameId'=>'COG',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CH',
     'countryName'=>'Switzerland',
     'currencyCode'=>'CHF',
@@ -827,9 +827,9 @@ function addCountries(){
     'languages'=>'de-CH,fr-CH,it-CH,rm',
     'isoAlpha3'=>'CHE',
     'geonameId'=>2658434
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CI',
     'countryName'=>'Ivory Coast',
     'currencyCode'=>'XOF',
@@ -847,9 +847,9 @@ function addCountries(){
     'geonameId'=>'fr-CI',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CK',
     'countryName'=>'Cook Islands',
     'currencyCode'=>'NZD',
@@ -869,9 +869,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CL',
     'countryName'=>'Chile',
     'currencyCode'=>'CLP',
@@ -891,9 +891,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CM',
     'countryName'=>'Cameroon',
     'currencyCode'=>'XAF',
@@ -909,9 +909,9 @@ function addCountries(){
     'languages'=>'en-CM,fr-CM',
     'isoAlpha3'=>'CMR',
     'geonameId'=>2233387
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CN',
     'countryName'=>'China',
     'currencyCode'=>'CNY',
@@ -927,9 +927,9 @@ function addCountries(){
     'languages'=>'zh-CN,yue,wuu,dta,ug,za',
     'isoAlpha3'=>'CHN',
     'geonameId'=>1814991
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CO',
     'countryName'=>'Colombia',
     'currencyCode'=>'COP',
@@ -948,9 +948,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CR',
     'countryName'=>'Costa Rica',
     'currencyCode'=>'CRC',
@@ -968,9 +968,9 @@ function addCountries(){
     'geonameId'=>'es-CR,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CU',
     'countryName'=>'Cuba',
     'currencyCode'=>'CUP',
@@ -988,9 +988,9 @@ function addCountries(){
     'geonameId'=>'es-CU',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CV',
     'countryName'=>'Cape Verde',
     'currencyCode'=>'CVE',
@@ -1008,9 +1008,9 @@ function addCountries(){
     'geonameId'=>'pt-CV',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CW',
     'countryName'=>'Curaçao',
     'currencyCode'=>'ANG',
@@ -1028,9 +1028,9 @@ function addCountries(){
     'geonameId'=>'nl,pap',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CX',
     'countryName'=>'Christmas Island',
     'currencyCode'=>'AUD',
@@ -1048,9 +1048,9 @@ function addCountries(){
     'geonameId'=>'en,zh,ms-CC',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CY',
     'countryName'=>'Cyprus',
     'currencyCode'=>'EUR',
@@ -1066,9 +1066,9 @@ function addCountries(){
     'languages'=>'el-CY,tr-CY,en',
     'isoAlpha3'=>'CYP',
     'geonameId'=>146669
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'CZ',
     'countryName'=>'Czech Republic',
     'currencyCode'=>'CZK',
@@ -1084,9 +1084,9 @@ function addCountries(){
     'languages'=>'cs,sk',
     'isoAlpha3'=>'CZE',
     'geonameId'=>3077311
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'DE',
     'countryName'=>'Germany',
     'currencyCode'=>'EUR',
@@ -1102,9 +1102,9 @@ function addCountries(){
     'languages'=>'de',
     'isoAlpha3'=>'DEU',
     'geonameId'=>2921044
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'DJ',
     'countryName'=>'Djibouti',
     'currencyCode'=>'DJF',
@@ -1120,9 +1120,9 @@ function addCountries(){
     'languages'=>'fr-DJ,ar,so-DJ,aa',
     'isoAlpha3'=>'DJI',
     'geonameId'=>223816
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'DK',
     'countryName'=>'Denmark',
     'currencyCode'=>'DKK',
@@ -1138,9 +1138,9 @@ function addCountries(){
     'languages'=>'da-DK,en,fo,de-DK',
     'isoAlpha3'=>'DNK',
     'geonameId'=>2623032
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'DM',
     'countryName'=>'Dominica',
     'currencyCode'=>'XCD',
@@ -1158,9 +1158,9 @@ function addCountries(){
     'geonameId'=>'en-DM',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'DO',
     'countryName'=>'Dominican Republic',
     'currencyCode'=>'DOP',
@@ -1178,9 +1178,9 @@ function addCountries(){
     'geonameId'=>'es-DO',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'DZ',
     'countryName'=>'Algeria',
     'currencyCode'=>'DZD',
@@ -1197,9 +1197,9 @@ function addCountries(){
     'isoAlpha3'=>'ar-DZ',
     'geonameId'=>'DZA',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'EC',
     'countryName'=>'Ecuador',
     'currencyCode'=>'USD',
@@ -1218,9 +1218,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'EE',
     'countryName'=>'Estonia',
     'currencyCode'=>'EUR',
@@ -1236,9 +1236,9 @@ function addCountries(){
     'languages'=>'et,ru',
     'isoAlpha3'=>'EST',
     'geonameId'=>453733
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'EG',
     'countryName'=>'Egypt',
     'currencyCode'=>'EGP',
@@ -1254,9 +1254,9 @@ function addCountries(){
     'languages'=>'ar-EG,en,fr',
     'isoAlpha3'=>'EGY',
     'geonameId'=>357994
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'EH',
     'countryName'=>'Western Sahara',
     'currencyCode'=>'MAD',
@@ -1274,9 +1274,9 @@ function addCountries(){
     'geonameId'=>'ar,mey',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ER',
     'countryName'=>'Eritrea',
     'currencyCode'=>'ERN',
@@ -1292,9 +1292,9 @@ function addCountries(){
     'languages'=>'aa-ER,ar,tig,kun,ti-ER',
     'isoAlpha3'=>'ERI',
     'geonameId'=>338010
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ES',
     'countryName'=>'Spain',
     'currencyCode'=>'EUR',
@@ -1311,9 +1311,9 @@ function addCountries(){
     'isoAlpha3'=>'es-ES,ca,gl,eu,oc',
     'geonameId'=>'ESP',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ET',
     'countryName'=>'Ethiopia',
     'currencyCode'=>'ETB',
@@ -1329,9 +1329,9 @@ function addCountries(){
     'languages'=>'am,en-ET,om-ET,ti-ET,so-ET,sid',
     'isoAlpha3'=>'ETH',
     'geonameId'=>337996
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'FI',
     'countryName'=>'Finland',
     'currencyCode'=>'EUR',
@@ -1347,9 +1347,9 @@ function addCountries(){
     'languages'=>'fi-FI,sv-FI,smn',
     'isoAlpha3'=>'FIN',
     'geonameId'=>660013
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'FJ',
     'countryName'=>'Fiji',
     'currencyCode'=>'FJD',
@@ -1368,9 +1368,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'FK',
     'countryName'=>'Falkland Islands',
     'currencyCode'=>'FKP',
@@ -1390,9 +1390,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'FM',
     'countryName'=>'Micronesia',
     'currencyCode'=>'USD',
@@ -1408,9 +1408,9 @@ function addCountries(){
     'languages'=>'en-FM,chk,pon,yap,kos,uli,woe,nkr,kpg',
     'isoAlpha3'=>'FSM',
     'geonameId'=>2081918
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'FO',
     'countryName'=>'Faroe Islands',
     'currencyCode'=>'DKK',
@@ -1428,9 +1428,9 @@ function addCountries(){
     'geonameId'=>'fo,da-FO',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'FR',
     'countryName'=>'France',
     'currencyCode'=>'EUR',
@@ -1447,9 +1447,9 @@ function addCountries(){
     'isoAlpha3'=>'fr-FR,frp,br,co,ca,eu,oc',
     'geonameId'=>'FRA',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GA',
     'countryName'=>'Gabon',
     'currencyCode'=>'XAF',
@@ -1466,9 +1466,9 @@ function addCountries(){
     'isoAlpha3'=>'fr-GA',
     'geonameId'=>'GAB',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GB',
     'countryName'=>'United Kingdom of Great Britain and Northern Ireland',
     'currencyCode'=>'GBP',
@@ -1485,9 +1485,9 @@ function addCountries(){
     'isoAlpha3'=>'en-GB,cy-GB,gd',
     'geonameId'=>'GBR',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GD',
     'countryName'=>'Grenada',
     'currencyCode'=>'XCD',
@@ -1505,9 +1505,9 @@ function addCountries(){
     'geonameId'=>'en-GD',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GE',
     'countryName'=>'Georgia',
     'currencyCode'=>'GEL',
@@ -1523,9 +1523,9 @@ function addCountries(){
     'languages'=>'ka,ru,hy,az',
     'isoAlpha3'=>'GEO',
     'geonameId'=>614540
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GF',
     'countryName'=>'French Guiana',
     'currencyCode'=>'EUR',
@@ -1543,9 +1543,9 @@ function addCountries(){
     'geonameId'=>'fr-GF',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GG',
     'countryName'=>'Guernsey',
     'currencyCode'=>'GBP',
@@ -1563,9 +1563,9 @@ function addCountries(){
     'geonameId'=>'en,fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GH',
     'countryName'=>'Ghana',
     'currencyCode'=>'GHS',
@@ -1582,9 +1582,9 @@ function addCountries(){
     'isoAlpha3'=>'en-GH,ak,ee,tw',
     'geonameId'=>'GHA',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GI',
     'countryName'=>'Gibraltar',
     'currencyCode'=>'GIP',
@@ -1602,9 +1602,9 @@ function addCountries(){
     'geonameId'=>'en-GI,es,it,pt',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GL',
     'countryName'=>'Greenland',
     'currencyCode'=>'DKK',
@@ -1622,9 +1622,9 @@ function addCountries(){
     'geonameId'=>'kl,da-GL,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GM',
     'countryName'=>'Gambia',
     'currencyCode'=>'GMD',
@@ -1642,9 +1642,9 @@ function addCountries(){
     'geonameId'=>'en-GM,mnk,wof,wo,ff',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GN',
     'countryName'=>'Guinea',
     'currencyCode'=>'GNF',
@@ -1662,9 +1662,9 @@ function addCountries(){
     'geonameId'=>'fr-GN',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GP',
     'countryName'=>'Guadeloupe',
     'currencyCode'=>'EUR',
@@ -1682,9 +1682,9 @@ function addCountries(){
     'geonameId'=>'fr-GP',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GQ',
     'countryName'=>'Equatorial Guinea',
     'currencyCode'=>'XAF',
@@ -1700,9 +1700,9 @@ function addCountries(){
     'languages'=>'es-GQ,fr',
     'isoAlpha3'=>'GNQ',
     'geonameId'=>2309096
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GR',
     'countryName'=>'Greece',
     'currencyCode'=>'EUR',
@@ -1718,9 +1718,9 @@ function addCountries(){
     'languages'=>'el-GR,en,fr',
     'isoAlpha3'=>'GRC',
     'geonameId'=>390903
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GS',
     'countryName'=>'South Georgia and the South Sandwich Islands',
     'currencyCode'=>'GBP',
@@ -1740,9 +1740,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GT',
     'countryName'=>'Guatemala',
     'currencyCode'=>'GTQ',
@@ -1760,9 +1760,9 @@ function addCountries(){
     'geonameId'=>'es-GT',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GU',
     'countryName'=>'Guam',
     'currencyCode'=>'USD',
@@ -1778,9 +1778,9 @@ function addCountries(){
     'languages'=>'en-GU,ch-GU',
     'isoAlpha3'=>'GUM',
     'geonameId'=>4043988
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GW',
     'countryName'=>'Guinea-Bissau',
     'currencyCode'=>'XOF',
@@ -1798,9 +1798,9 @@ function addCountries(){
     'geonameId'=>'pt-GW,pov',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'GY',
     'countryName'=>'Guyana',
     'currencyCode'=>'GYD',
@@ -1818,9 +1818,9 @@ function addCountries(){
     'geonameId'=>'en-GY',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'HK',
     'countryName'=>'Hong Kong',
     'currencyCode'=>'HKD',
@@ -1836,9 +1836,9 @@ function addCountries(){
     'languages'=>'zh-HK,yue,zh,en',
     'isoAlpha3'=>'HKG',
     'geonameId'=>1819730
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'HM',
     'countryName'=>'Heard Island and McDonald Islands',
     'currencyCode'=>'AUD',
@@ -1856,9 +1856,9 @@ function addCountries(){
     'geonameId'=>'',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'HN',
     'countryName'=>'Honduras',
     'currencyCode'=>'HNL',
@@ -1876,9 +1876,9 @@ function addCountries(){
     'geonameId'=>'es-HN',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'HR',
     'countryName'=>'Croatia',
     'currencyCode'=>'HRK',
@@ -1894,9 +1894,9 @@ function addCountries(){
     'languages'=>'hr-HR,sr',
     'isoAlpha3'=>'HRV',
     'geonameId'=>3202326
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'HT',
     'countryName'=>'Haiti',
     'currencyCode'=>'HTG',
@@ -1914,9 +1914,9 @@ function addCountries(){
     'geonameId'=>'ht,fr-HT',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'HU',
     'countryName'=>'Hungary',
     'currencyCode'=>'HUF',
@@ -1932,9 +1932,9 @@ function addCountries(){
     'languages'=>'hu-HU',
     'isoAlpha3'=>'HUN',
     'geonameId'=>719819
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ID',
     'countryName'=>'Indonesia',
     'currencyCode'=>'IDR',
@@ -1951,9 +1951,9 @@ function addCountries(){
     'isoAlpha3'=>'id,en,nl,jv',
     'geonameId'=>'IDN',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IE',
     'countryName'=>'Ireland',
     'currencyCode'=>'EUR',
@@ -1971,9 +1971,9 @@ function addCountries(){
     'geonameId'=>'en-IE,ga-IE',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IL',
     'countryName'=>'Israel',
     'currencyCode'=>'ILS',
@@ -1989,9 +1989,9 @@ function addCountries(){
     'languages'=>'he,ar-IL,en-IL,',
     'isoAlpha3'=>'ISR',
     'geonameId'=>294640
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IM',
     'countryName'=>'Isle of Man',
     'currencyCode'=>'GBP',
@@ -2009,9 +2009,9 @@ function addCountries(){
     'geonameId'=>'en,gv',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IN',
     'countryName'=>'India',
     'currencyCode'=>'INR',
@@ -2027,9 +2027,9 @@ function addCountries(){
     'languages'=>'en-IN,hi,bn,te,mr,ta,ur,gu,kn,ml,or,pa,as,bh,sat,ks,ne,sd,kok,doi,mni,sit,sa,fr,lus,inc',
     'isoAlpha3'=>'IND',
     'geonameId'=>1269750
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IO',
     'countryName'=>'British Indian Ocean Territory',
     'currencyCode'=>'USD',
@@ -2047,9 +2047,9 @@ function addCountries(){
     'geonameId'=>'en-IO',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IQ',
     'countryName'=>'Iraq',
     'currencyCode'=>'IQD',
@@ -2065,9 +2065,9 @@ function addCountries(){
     'languages'=>'ar-IQ,ku,hy',
     'isoAlpha3'=>'IRQ',
     'geonameId'=>99237
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IR',
     'countryName'=>'Iran',
     'currencyCode'=>'IRR',
@@ -2083,9 +2083,9 @@ function addCountries(){
     'languages'=>'fa-IR,ku',
     'isoAlpha3'=>'IRN',
     'geonameId'=>130758
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IS',
     'countryName'=>'Iceland',
     'currencyCode'=>'ISK',
@@ -2103,9 +2103,9 @@ function addCountries(){
     'geonameId'=>'is,en,de,da,sv,no',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'IT',
     'countryName'=>'Italy',
     'currencyCode'=>'EUR',
@@ -2121,9 +2121,9 @@ function addCountries(){
     'languages'=>'it-IT,de-IT,fr-IT,sc,ca,co,sl',
     'isoAlpha3'=>'ITA',
     'geonameId'=>3175395
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'JE',
     'countryName'=>'Jersey',
     'currencyCode'=>'GBP',
@@ -2141,9 +2141,9 @@ function addCountries(){
     'geonameId'=>'en,pt',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'JM',
     'countryName'=>'Jamaica',
     'currencyCode'=>'JMD',
@@ -2161,9 +2161,9 @@ function addCountries(){
     'geonameId'=>'en-JM',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'JO',
     'countryName'=>'Jordan',
     'currencyCode'=>'JOD',
@@ -2179,9 +2179,9 @@ function addCountries(){
     'languages'=>'ar-JO,en',
     'isoAlpha3'=>'JOR',
     'geonameId'=>248816
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'JP',
     'countryName'=>'Japan',
     'currencyCode'=>'JPY',
@@ -2197,9 +2197,9 @@ function addCountries(){
     'languages'=>'ja',
     'isoAlpha3'=>'JPN',
     'geonameId'=>1861060
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KE',
     'countryName'=>'Kenya',
     'currencyCode'=>'KES',
@@ -2216,9 +2216,9 @@ function addCountries(){
     'isoAlpha3'=>'en-KE,sw-KE',
     'geonameId'=>'KEN',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KG',
     'countryName'=>'Kyrgyzstan',
     'currencyCode'=>'KGS',
@@ -2234,9 +2234,9 @@ function addCountries(){
     'languages'=>'ky,uz,ru',
     'isoAlpha3'=>'KGZ',
     'geonameId'=>1527747
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KH',
     'countryName'=>'Cambodia',
     'currencyCode'=>'KHR',
@@ -2252,9 +2252,9 @@ function addCountries(){
     'languages'=>'km,fr,en',
     'isoAlpha3'=>'KHM',
     'geonameId'=>1831722
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KI',
     'countryName'=>'Kiribati',
     'currencyCode'=>'AUD',
@@ -2272,9 +2272,9 @@ function addCountries(){
     'geonameId'=>'en-KI,gil',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KM',
     'countryName'=>'Comoros',
     'currencyCode'=>'KMF',
@@ -2292,9 +2292,9 @@ function addCountries(){
     'geonameId'=>'ar,fr-KM',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KN',
     'countryName'=>'Saint Kitts and Nevis',
     'currencyCode'=>'XCD',
@@ -2312,9 +2312,9 @@ function addCountries(){
     'geonameId'=>'en-KN',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KP',
     'countryName'=>'North Korea',
     'currencyCode'=>'KPW',
@@ -2330,9 +2330,9 @@ function addCountries(){
     'languages'=>'ko-KP',
     'isoAlpha3'=>'PRK',
     'geonameId'=>1873107
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KR',
     'countryName'=>'South Korea',
     'currencyCode'=>'KRW',
@@ -2348,9 +2348,9 @@ function addCountries(){
     'languages'=>'ko-KR,en',
     'isoAlpha3'=>'KOR',
     'geonameId'=>1835841
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KW',
     'countryName'=>'Kuwait',
     'currencyCode'=>'KWD',
@@ -2366,9 +2366,9 @@ function addCountries(){
     'languages'=>'ar-KW,en',
     'isoAlpha3'=>'KWT',
     'geonameId'=>285570
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KY',
     'countryName'=>'Cayman Islands',
     'currencyCode'=>'KYD',
@@ -2386,9 +2386,9 @@ function addCountries(){
     'geonameId'=>'en-KY',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'KZ',
     'countryName'=>'Kazakhstan',
     'currencyCode'=>'KZT',
@@ -2404,9 +2404,9 @@ function addCountries(){
     'languages'=>'kk,ru',
     'isoAlpha3'=>'KAZ',
     'geonameId'=>1522867
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LA',
     'countryName'=>'Laos',
     'currencyCode'=>'LAK',
@@ -2422,9 +2422,9 @@ function addCountries(){
     'languages'=>'lo,fr,en',
     'isoAlpha3'=>'LAO',
     'geonameId'=>1655842
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LB',
     'countryName'=>'Lebanon',
     'currencyCode'=>'LBP',
@@ -2440,9 +2440,9 @@ function addCountries(){
     'languages'=>'ar-LB,fr-LB,en,hy',
     'isoAlpha3'=>'LBN',
     'geonameId'=>272103
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LC',
     'countryName'=>'Saint Lucia',
     'currencyCode'=>'XCD',
@@ -2460,9 +2460,9 @@ function addCountries(){
     'geonameId'=>'en-LC',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LI',
     'countryName'=>'Liechtenstein',
     'currencyCode'=>'CHF',
@@ -2478,9 +2478,9 @@ function addCountries(){
     'languages'=>'de-LI',
     'isoAlpha3'=>'LIE',
     'geonameId'=>3042058
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LK',
     'countryName'=>'Sri Lanka',
     'currencyCode'=>'LKR',
@@ -2496,9 +2496,9 @@ function addCountries(){
     'languages'=>'si,ta,en',
     'isoAlpha3'=>'LKA',
     'geonameId'=>1227603
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LR',
     'countryName'=>'Liberia',
     'currencyCode'=>'LRD',
@@ -2516,9 +2516,9 @@ function addCountries(){
     'geonameId'=>'en-LR',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LS',
     'countryName'=>'Lesotho',
     'currencyCode'=>'LSL',
@@ -2536,9 +2536,9 @@ function addCountries(){
     'geonameId'=>'en-LS,st,zu,xh',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LT',
     'countryName'=>'Lithuania',
     'currencyCode'=>'EUR',
@@ -2554,9 +2554,9 @@ function addCountries(){
     'languages'=>'lt,ru,pl',
     'isoAlpha3'=>'LTU',
     'geonameId'=>597427
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LU',
     'countryName'=>'Luxembourg',
     'currencyCode'=>'EUR',
@@ -2572,9 +2572,9 @@ function addCountries(){
     'languages'=>'lb,de-LU,fr-LU',
     'isoAlpha3'=>'LUX',
     'geonameId'=>2960313
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LV',
     'countryName'=>'Latvia',
     'currencyCode'=>'EUR',
@@ -2590,9 +2590,9 @@ function addCountries(){
     'languages'=>'lv,ru,lt',
     'isoAlpha3'=>'LVA',
     'geonameId'=>458258
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'LY',
     'countryName'=>'Libya',
     'currencyCode'=>'LYD',
@@ -2608,9 +2608,9 @@ function addCountries(){
     'languages'=>'ar-LY,it,en',
     'isoAlpha3'=>'LBY',
     'geonameId'=>2215636
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MA',
     'countryName'=>'Morocco',
     'currencyCode'=>'MAD',
@@ -2628,9 +2628,9 @@ function addCountries(){
     'geonameId'=>'ar-MA,fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MC',
     'countryName'=>'Monaco',
     'currencyCode'=>'EUR',
@@ -2646,9 +2646,9 @@ function addCountries(){
     'languages'=>'fr-MC,en,it',
     'isoAlpha3'=>'MCO',
     'geonameId'=>2993457
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MD',
     'countryName'=>'Moldova',
     'currencyCode'=>'MDL',
@@ -2664,9 +2664,9 @@ function addCountries(){
     'languages'=>'ro,ru,gag,tr',
     'isoAlpha3'=>'MDA',
     'geonameId'=>617790
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ME',
     'countryName'=>'Montenegro',
     'currencyCode'=>'EUR',
@@ -2682,9 +2682,9 @@ function addCountries(){
     'languages'=>'sr,hu,bs,sq,hr,rom',
     'isoAlpha3'=>'MNE',
     'geonameId'=>3194884
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MF',
     'countryName'=>'Saint Martin',
     'currencyCode'=>'EUR',
@@ -2702,9 +2702,9 @@ function addCountries(){
     'geonameId'=>'fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MG',
     'countryName'=>'Madagascar',
     'currencyCode'=>'MGA',
@@ -2722,9 +2722,9 @@ function addCountries(){
     'geonameId'=>'fr-MG,mg',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MH',
     'countryName'=>'Marshall Islands',
     'currencyCode'=>'USD',
@@ -2740,9 +2740,9 @@ function addCountries(){
     'languages'=>'mh,en-MH',
     'isoAlpha3'=>'MHL',
     'geonameId'=>2080185
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MK',
     'countryName'=>'Macedonia',
     'currencyCode'=>'MKD',
@@ -2758,9 +2758,9 @@ function addCountries(){
     'languages'=>'mk,sq,tr,rmm,sr',
     'isoAlpha3'=>'MKD',
     'geonameId'=>718075
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ML',
     'countryName'=>'Mali',
     'currencyCode'=>'XOF',
@@ -2777,9 +2777,9 @@ function addCountries(){
     'isoAlpha3'=>'fr-ML,bm',
     'geonameId'=>'MLI',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MM',
     'countryName'=>'Myanmar [Burma]',
     'currencyCode'=>'MMK',
@@ -2795,9 +2795,9 @@ function addCountries(){
     'languages'=>'my',
     'isoAlpha3'=>'MMR',
     'geonameId'=>1327865
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MN',
     'countryName'=>'Mongolia',
     'currencyCode'=>'MNT',
@@ -2813,9 +2813,9 @@ function addCountries(){
     'languages'=>'mn,ru',
     'isoAlpha3'=>'MNG',
     'geonameId'=>2029969
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MO',
     'countryName'=>'Macao',
     'currencyCode'=>'MOP',
@@ -2831,9 +2831,9 @@ function addCountries(){
     'languages'=>'zh,zh-MO,pt',
     'isoAlpha3'=>'MAC',
     'geonameId'=>1821275
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MP',
     'countryName'=>'Northern Mariana Islands',
     'currencyCode'=>'USD',
@@ -2849,9 +2849,9 @@ function addCountries(){
     'languages'=>'fil,tl,zh,ch-MP,en-MP',
     'isoAlpha3'=>'MNP',
     'geonameId'=>4041468
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MQ',
     'countryName'=>'Martinique',
     'currencyCode'=>'EUR',
@@ -2869,9 +2869,9 @@ function addCountries(){
     'geonameId'=>'fr-MQ',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MR',
     'countryName'=>'Mauritania',
     'currencyCode'=>'MRO',
@@ -2889,9 +2889,9 @@ function addCountries(){
     'geonameId'=>'ar-MR,fuc,snk,fr,mey,wo',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MS',
     'countryName'=>'Montserrat',
     'currencyCode'=>'XCD',
@@ -2909,9 +2909,9 @@ function addCountries(){
     'geonameId'=>'en-MS',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MT',
     'countryName'=>'Malta',
     'currencyCode'=>'EUR',
@@ -2927,9 +2927,9 @@ function addCountries(){
     'languages'=>'mt,en-MT',
     'isoAlpha3'=>'MLT',
     'geonameId'=>2562770
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MU',
     'countryName'=>'Mauritius',
     'currencyCode'=>'MUR',
@@ -2947,9 +2947,9 @@ function addCountries(){
     'geonameId'=>'en-MU,bho,fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MV',
     'countryName'=>'Maldives',
     'currencyCode'=>'MVR',
@@ -2966,9 +2966,9 @@ function addCountries(){
     'isoAlpha3'=>'dv,en',
     'geonameId'=>'MDV',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MW',
     'countryName'=>'Malawi',
     'currencyCode'=>'MWK',
@@ -2986,9 +2986,9 @@ function addCountries(){
     'geonameId'=>'ny,yao,tum,swk',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MX',
     'countryName'=>'Mexico',
     'currencyCode'=>'MXN',
@@ -3006,9 +3006,9 @@ function addCountries(){
     'geonameId'=>'es-MX',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MY',
     'countryName'=>'Malaysia',
     'currencyCode'=>'MYR',
@@ -3024,9 +3024,9 @@ function addCountries(){
     'languages'=>'ms-MY,en,zh,ta,te,ml,pa,th',
     'isoAlpha3'=>'MYS',
     'geonameId'=>1733045
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'MZ',
     'countryName'=>'Mozambique',
     'currencyCode'=>'MZN',
@@ -3044,9 +3044,9 @@ function addCountries(){
     'geonameId'=>'pt-MZ,vmw',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NA',
     'countryName'=>'Namibia',
     'currencyCode'=>'NAD',
@@ -3064,9 +3064,9 @@ function addCountries(){
     'geonameId'=>'en-NA,af,de,hz,naq',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NC',
     'countryName'=>'New Caledonia',
     'currencyCode'=>'XPF',
@@ -3084,9 +3084,9 @@ function addCountries(){
     'geonameId'=>'fr-NC',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NE',
     'countryName'=>'Niger',
     'currencyCode'=>'XOF',
@@ -3102,9 +3102,9 @@ function addCountries(){
     'languages'=>'fr-NE,ha,kr,dje',
     'isoAlpha3'=>'NER',
     'geonameId'=>2440476
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NF',
     'countryName'=>'Norfolk Island',
     'currencyCode'=>'AUD',
@@ -3122,9 +3122,9 @@ function addCountries(){
     'geonameId'=>'en-NF',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NG',
     'countryName'=>'Nigeria',
     'currencyCode'=>'NGN',
@@ -3140,9 +3140,9 @@ function addCountries(){
     'languages'=>'en-NG,ha,yo,ig,ff',
     'isoAlpha3'=>'NGA',
     'geonameId'=>2328926
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NI',
     'countryName'=>'Nicaragua',
     'currencyCode'=>'NIO',
@@ -3160,9 +3160,9 @@ function addCountries(){
     'geonameId'=>'es-NI,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NL',
     'countryName'=>'Netherlands',
     'currencyCode'=>'EUR',
@@ -3178,9 +3178,9 @@ function addCountries(){
     'languages'=>'nl-NL,fy-NL',
     'isoAlpha3'=>'NLD',
     'geonameId'=>2750405
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NO',
     'countryName'=>'Norway',
     'currencyCode'=>'NOK',
@@ -3196,9 +3196,9 @@ function addCountries(){
     'languages'=>'no,nb,nn,se,fi',
     'isoAlpha3'=>'NOR',
     'geonameId'=>3144096
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NP',
     'countryName'=>'Nepal',
     'currencyCode'=>'NPR',
@@ -3214,9 +3214,9 @@ function addCountries(){
     'languages'=>'ne,en',
     'isoAlpha3'=>'NPL',
     'geonameId'=>1282988
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NR',
     'countryName'=>'Nauru',
     'currencyCode'=>'AUD',
@@ -3234,9 +3234,9 @@ function addCountries(){
     'geonameId'=>'na,en-NR',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NU',
     'countryName'=>'Niue',
     'currencyCode'=>'NZD',
@@ -3256,9 +3256,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'NZ',
     'countryName'=>'New Zealand',
     'currencyCode'=>'NZD',
@@ -3277,9 +3277,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'OM',
     'countryName'=>'Oman',
     'currencyCode'=>'OMR',
@@ -3295,9 +3295,9 @@ function addCountries(){
     'languages'=>'ar-OM,en,bal,ur',
     'isoAlpha3'=>'OMN',
     'geonameId'=>286963
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PA',
     'countryName'=>'Panama',
     'currencyCode'=>'PAB',
@@ -3315,9 +3315,9 @@ function addCountries(){
     'geonameId'=>'es-PA,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PE',
     'countryName'=>'Peru',
     'currencyCode'=>'PEN',
@@ -3337,9 +3337,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PF',
     'countryName'=>'French Polynesia',
     'currencyCode'=>'XPF',
@@ -3359,9 +3359,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PG',
     'countryName'=>'Papua New Guinea',
     'currencyCode'=>'PGK',
@@ -3379,9 +3379,9 @@ function addCountries(){
     'geonameId'=>'en-PG,ho,meu,tpi',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PH',
     'countryName'=>'Philippines',
     'currencyCode'=>'PHP',
@@ -3397,9 +3397,9 @@ function addCountries(){
     'languages'=>'tl,en-PH,fil',
     'isoAlpha3'=>'PHL',
     'geonameId'=>1694008
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PK',
     'countryName'=>'Pakistan',
     'currencyCode'=>'PKR',
@@ -3415,9 +3415,9 @@ function addCountries(){
     'languages'=>'ur-PK,en-PK,pa,sd,ps,brh',
     'isoAlpha3'=>'PAK',
     'geonameId'=>1168579
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PL',
     'countryName'=>'Poland',
     'currencyCode'=>'PLN',
@@ -3433,9 +3433,9 @@ function addCountries(){
     'languages'=>'pl',
     'isoAlpha3'=>'POL',
     'geonameId'=>798544
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PM',
     'countryName'=>'Saint Pierre and Miquelon',
     'currencyCode'=>'EUR',
@@ -3453,9 +3453,9 @@ function addCountries(){
     'geonameId'=>'fr-PM',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PN',
     'countryName'=>'Pitcairn Islands',
     'currencyCode'=>'NZD',
@@ -3475,9 +3475,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PR',
     'countryName'=>'Puerto Rico',
     'currencyCode'=>'USD',
@@ -3495,9 +3495,9 @@ function addCountries(){
     'geonameId'=>'en-PR,es-PR',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PS',
     'countryName'=>'Palestine',
     'currencyCode'=>'ILS',
@@ -3513,9 +3513,9 @@ function addCountries(){
     'languages'=>'ar-PS',
     'isoAlpha3'=>'PSE',
     'geonameId'=>6254930
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PT',
     'countryName'=>'Portugal',
     'currencyCode'=>'EUR',
@@ -3533,9 +3533,9 @@ function addCountries(){
     'geonameId'=>'pt-PT,mwl',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PW',
     'countryName'=>'Palau',
     'currencyCode'=>'USD',
@@ -3551,9 +3551,9 @@ function addCountries(){
     'languages'=>'pau,sov,en-PW,tox,ja,fil,zh',
     'isoAlpha3'=>'PLW',
     'geonameId'=>1559582
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'PY',
     'countryName'=>'Paraguay',
     'currencyCode'=>'PYG',
@@ -3573,9 +3573,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'QA',
     'countryName'=>'Qatar',
     'currencyCode'=>'QAR',
@@ -3591,9 +3591,9 @@ function addCountries(){
     'languages'=>'ar-QA,es',
     'isoAlpha3'=>'QAT',
     'geonameId'=>289688
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'RE',
     'countryName'=>'Réunion',
     'currencyCode'=>'EUR',
@@ -3611,9 +3611,9 @@ function addCountries(){
     'geonameId'=>'fr-RE',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'RO',
     'countryName'=>'Romania',
     'currencyCode'=>'RON',
@@ -3629,9 +3629,9 @@ function addCountries(){
     'languages'=>'ro,hu,rom',
     'isoAlpha3'=>'ROU',
     'geonameId'=>798549
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'RS',
     'countryName'=>'Serbia',
     'currencyCode'=>'RSD',
@@ -3647,9 +3647,9 @@ function addCountries(){
     'languages'=>'sr,hu,bs,rom',
     'isoAlpha3'=>'SRB',
     'geonameId'=>6290252
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'RU',
     'countryName'=>'Russia',
     'currencyCode'=>'RUB',
@@ -3666,9 +3666,9 @@ function addCountries(){
     'isoAlpha3'=>'ru,tt,xal,cau,ady,kv,ce,tyv,cv,udm,tut,mns,bua,myv,mdf,chm,ba,inh,tut,kbd,krc,ava,sah,nog',
     'geonameId'=>'RUS',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'RW',
     'countryName'=>'Rwanda',
     'currencyCode'=>'RWF',
@@ -3686,9 +3686,9 @@ function addCountries(){
     'geonameId'=>'rw,en-RW,fr-RW,sw',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SA',
     'countryName'=>'Saudi Arabia',
     'currencyCode'=>'SAR',
@@ -3704,9 +3704,9 @@ function addCountries(){
     'languages'=>'ar-SA',
     'isoAlpha3'=>'SAU',
     'geonameId'=>102358
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SB',
     'countryName'=>'Solomon Islands',
     'currencyCode'=>'SBD',
@@ -3724,9 +3724,9 @@ function addCountries(){
     'geonameId'=>'en-SB,tpi',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SC',
     'countryName'=>'Seychelles',
     'currencyCode'=>'SCR',
@@ -3744,9 +3744,9 @@ function addCountries(){
     'geonameId'=>'en-SC,fr-SC',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SD',
     'countryName'=>'Sudan',
     'currencyCode'=>'SDG',
@@ -3762,9 +3762,9 @@ function addCountries(){
     'languages'=>'ar-SD,en,fia',
     'isoAlpha3'=>'SDN',
     'geonameId'=>366755
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SE',
     'countryName'=>'Sweden',
     'currencyCode'=>'SEK',
@@ -3780,9 +3780,9 @@ function addCountries(){
     'languages'=>'sv-SE,se,sma,fi-SE',
     'isoAlpha3'=>'SWE',
     'geonameId'=>2661886
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SG',
     'countryName'=>'Singapore',
     'currencyCode'=>'SGD',
@@ -3798,9 +3798,9 @@ function addCountries(){
     'languages'=>'cmn,en-SG,ms-SG,ta-SG,zh-SG',
     'isoAlpha3'=>'SGP',
     'geonameId'=>1880251
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SH',
     'countryName'=>'Saint Helena',
     'currencyCode'=>'SHP',
@@ -3820,9 +3820,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SI',
     'countryName'=>'Slovenia',
     'currencyCode'=>'EUR',
@@ -3838,9 +3838,9 @@ function addCountries(){
     'languages'=>'sl,sh',
     'isoAlpha3'=>'SVN',
     'geonameId'=>3190538
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SJ',
     'countryName'=>'Svalbard and Jan Mayen',
     'currencyCode'=>'NOK',
@@ -3856,9 +3856,9 @@ function addCountries(){
     'languages'=>'no,ru',
     'isoAlpha3'=>'SJM',
     'geonameId'=>607072
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SK',
     'countryName'=>'Slovakia',
     'currencyCode'=>'EUR',
@@ -3874,9 +3874,9 @@ function addCountries(){
     'languages'=>'sk,hu',
     'isoAlpha3'=>'SVK',
     'geonameId'=>3057568
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SL',
     'countryName'=>'Sierra Leone',
     'currencyCode'=>'SLL',
@@ -3894,9 +3894,9 @@ function addCountries(){
     'geonameId'=>'en-SL,men,tem',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SM',
     'countryName'=>'San Marino',
     'currencyCode'=>'EUR',
@@ -3912,9 +3912,9 @@ function addCountries(){
     'languages'=>'it-SM',
     'isoAlpha3'=>'SMR',
     'geonameId'=>3168068
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SN',
     'countryName'=>'Senegal',
     'currencyCode'=>'XOF',
@@ -3932,9 +3932,9 @@ function addCountries(){
     'geonameId'=>'fr-SN,wo,fuc,mnk',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SO',
     'countryName'=>'Somalia',
     'currencyCode'=>'SOS',
@@ -3951,9 +3951,9 @@ function addCountries(){
     'isoAlpha3'=>'so-SO,ar-SO,it,en-SO',
     'geonameId'=>'SOM',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SR',
     'countryName'=>'Suriname',
     'currencyCode'=>'SRD',
@@ -3971,9 +3971,9 @@ function addCountries(){
     'geonameId'=>'nl-SR,en,srn,hns,jv',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SS',
     'countryName'=>'South Sudan',
     'currencyCode'=>'SSP',
@@ -3989,9 +3989,9 @@ function addCountries(){
     'languages'=>'en',
     'isoAlpha3'=>'SSD',
     'geonameId'=>7909807
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ST',
     'countryName'=>'São Tomé and Príncipe',
     'currencyCode'=>'STD',
@@ -4007,9 +4007,9 @@ function addCountries(){
     'languages'=>'pt-ST',
     'isoAlpha3'=>'STP',
     'geonameId'=>2410758
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SV',
     'countryName'=>'El Salvador',
     'currencyCode'=>'USD',
@@ -4027,9 +4027,9 @@ function addCountries(){
     'geonameId'=>'es-SV',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SX',
     'countryName'=>'Sint Maarten',
     'currencyCode'=>'ANG',
@@ -4047,9 +4047,9 @@ function addCountries(){
     'geonameId'=>'nl,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SY',
     'countryName'=>'Syria',
     'currencyCode'=>'SYP',
@@ -4065,9 +4065,9 @@ function addCountries(){
     'languages'=>'ar-SY,ku,hy,arc,fr,en',
     'isoAlpha3'=>'SYR',
     'geonameId'=>163843
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'SZ',
     'countryName'=>'Swaziland',
     'currencyCode'=>'SZL',
@@ -4085,9 +4085,9 @@ function addCountries(){
     'geonameId'=>'en-SZ,ss-SZ',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TC',
     'countryName'=>'Turks and Caicos Islands',
     'currencyCode'=>'USD',
@@ -4105,9 +4105,9 @@ function addCountries(){
     'geonameId'=>'en-TC',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TD',
     'countryName'=>'Chad',
     'currencyCode'=>'XAF',
@@ -4123,9 +4123,9 @@ function addCountries(){
     'languages'=>'fr-TD,ar-TD,sre',
     'isoAlpha3'=>'TCD',
     'geonameId'=>2434508
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TF',
     'countryName'=>'French Southern Territories',
     'currencyCode'=>'EUR',
@@ -4143,9 +4143,9 @@ function addCountries(){
     'geonameId'=>'fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TG',
     'countryName'=>'Togo',
     'currencyCode'=>'XOF',
@@ -4162,9 +4162,9 @@ function addCountries(){
     'isoAlpha3'=>'fr-TG,ee,hna,kbp,dag,ha',
     'geonameId'=>'TGO',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TH',
     'countryName'=>'Thailand',
     'currencyCode'=>'THB',
@@ -4180,9 +4180,9 @@ function addCountries(){
     'languages'=>'th,en',
     'isoAlpha3'=>'THA',
     'geonameId'=>1605651
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TJ',
     'countryName'=>'Tajikistan',
     'currencyCode'=>'TJS',
@@ -4198,9 +4198,9 @@ function addCountries(){
     'languages'=>'tg,ru',
     'isoAlpha3'=>'TJK',
     'geonameId'=>1220409
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TK',
     'countryName'=>'Tokelau',
     'currencyCode'=>'NZD',
@@ -4220,9 +4220,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TL',
     'countryName'=>'East Timor',
     'currencyCode'=>'USD',
@@ -4240,9 +4240,9 @@ function addCountries(){
     'geonameId'=>'tet,pt-TL,id,en',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TM',
     'countryName'=>'Turkmenistan',
     'currencyCode'=>'TMT',
@@ -4258,9 +4258,9 @@ function addCountries(){
     'languages'=>'tk,ru,uz',
     'isoAlpha3'=>'TKM',
     'geonameId'=>1218197
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TN',
     'countryName'=>'Tunisia',
     'currencyCode'=>'TND',
@@ -4276,9 +4276,9 @@ function addCountries(){
     'languages'=>'ar-TN,fr',
     'isoAlpha3'=>'TUN',
     'geonameId'=>2464461
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TO',
     'countryName'=>'Tonga',
     'currencyCode'=>'TOP',
@@ -4298,9 +4298,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TR',
     'countryName'=>'Turkey',
     'currencyCode'=>'TRY',
@@ -4316,9 +4316,9 @@ function addCountries(){
     'languages'=>'tr-TR,ku,diq,az,av',
     'isoAlpha3'=>'TUR',
     'geonameId'=>298795
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TT',
     'countryName'=>'Trinidad and Tobago',
     'currencyCode'=>'TTD',
@@ -4336,9 +4336,9 @@ function addCountries(){
     'geonameId'=>'en-TT,hns,fr,es,zh',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TV',
     'countryName'=>'Tuvalu',
     'currencyCode'=>'AUD',
@@ -4356,9 +4356,9 @@ function addCountries(){
     'geonameId'=>'tvl,en,sm,gil',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TW',
     'countryName'=>'Taiwan',
     'currencyCode'=>'TWD',
@@ -4374,9 +4374,9 @@ function addCountries(){
     'languages'=>'zh-TW,zh,nan,hak',
     'isoAlpha3'=>'TWN',
     'geonameId'=>1668284
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'TZ',
     'countryName'=>'Tanzania',
     'currencyCode'=>'TZS',
@@ -4394,9 +4394,9 @@ function addCountries(){
     'geonameId'=>'sw-TZ,en,ar',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'UA',
     'countryName'=>'Ukraine',
     'currencyCode'=>'UAH',
@@ -4412,9 +4412,9 @@ function addCountries(){
     'languages'=>'uk,ru-UA,rom,pl,hu',
     'isoAlpha3'=>'UKR',
     'geonameId'=>690791
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'UG',
     'countryName'=>'Uganda',
     'currencyCode'=>'UGX',
@@ -4431,9 +4431,9 @@ function addCountries(){
     'isoAlpha3'=>'en-UG,lg,sw,ar',
     'geonameId'=>'UGA',
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'UM',
     'countryName'=>'U.S. Minor Outlying Islands',
     'currencyCode'=>'USD',
@@ -4451,9 +4451,9 @@ function addCountries(){
     'geonameId'=>'en-UM',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'US',
     'countryName'=>'United States',
     'currencyCode'=>'USD',
@@ -4471,9 +4471,9 @@ function addCountries(){
     'geonameId'=>'en-US,es-US,haw,fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'UY',
     'countryName'=>'Uruguay',
     'currencyCode'=>'UYU',
@@ -4493,9 +4493,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'UZ',
     'countryName'=>'Uzbekistan',
     'currencyCode'=>'UZS',
@@ -4511,9 +4511,9 @@ function addCountries(){
     'languages'=>'uz,ru,tg',
     'isoAlpha3'=>'UZB',
     'geonameId'=>1512440
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'VA',
     'countryName'=>'Vatican City',
     'currencyCode'=>'EUR',
@@ -4529,9 +4529,9 @@ function addCountries(){
     'languages'=>'la,it,fr',
     'isoAlpha3'=>'VAT',
     'geonameId'=>3164670
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'VC',
     'countryName'=>'Saint Vincent and the Grenadines',
     'currencyCode'=>'XCD',
@@ -4549,9 +4549,9 @@ function addCountries(){
     'geonameId'=>'en-VC,fr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'VE',
     'countryName'=>'Venezuela',
     'currencyCode'=>'VEF',
@@ -4569,9 +4569,9 @@ function addCountries(){
     'geonameId'=>'es-VE',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'VG',
     'countryName'=>'British Virgin Islands',
     'currencyCode'=>'USD',
@@ -4589,9 +4589,9 @@ function addCountries(){
     'geonameId'=>'en-VG',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'VI',
     'countryName'=>'U.S. Virgin Islands',
     'currencyCode'=>'USD',
@@ -4609,9 +4609,9 @@ function addCountries(){
     'geonameId'=>'en-VI',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'VN',
     'countryName'=>'Vietnam',
     'currencyCode'=>'VND',
@@ -4627,9 +4627,9 @@ function addCountries(){
     'languages'=>'vi,en,fr,zh,km',
     'isoAlpha3'=>'VNM',
     'geonameId'=>1562822
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'VU',
     'countryName'=>'Vanuatu',
     'currencyCode'=>'VUV',
@@ -4647,9 +4647,9 @@ function addCountries(){
     'geonameId'=>'bi,en-VU,fr-VU',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'WF',
     'countryName'=>'Wallis and Futuna',
     'currencyCode'=>'XPF',
@@ -4669,9 +4669,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'WS',
     'countryName'=>'Samoa',
     'currencyCode'=>'WST',
@@ -4691,9 +4691,9 @@ function addCountries(){
    
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'XK',
     'countryName'=>'Kosovo',
     'currencyCode'=>'EUR',
@@ -4709,9 +4709,9 @@ function addCountries(){
     'languages'=>'sq,sr',
     'isoAlpha3'=>'XKX',
     'geonameId'=>831053
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'YE',
     'countryName'=>'Yemen',
     'currencyCode'=>'YER',
@@ -4727,9 +4727,9 @@ function addCountries(){
     'languages'=>'ar-YE',
     'isoAlpha3'=>'YEM',
     'geonameId'=>69543
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'YT',
     'countryName'=>'Mayotte',
     'currencyCode'=>'EUR',
@@ -4747,9 +4747,9 @@ function addCountries(){
     'geonameId'=>'fr-YT',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ZA',
     'countryName'=>'South Africa',
     'currencyCode'=>'ZAR',
@@ -4767,9 +4767,9 @@ function addCountries(){
     'geonameId'=>'zu,xh,af,nso,en-ZA,tn,st,ts,ss,ve,nr',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ZM',
     'countryName'=>'Zambia',
     'currencyCode'=>'ZMW',
@@ -4787,9 +4787,9 @@ function addCountries(){
     'geonameId'=>'en-ZM,bem,loz,lun,lue,ny,toi',
    
    
-    ] );
+    ]);
                 
-    App\Country::create( [
+    App\Country::create([
     'countryCode'=>'ZW',
     'countryName'=>'Zimbabwe',
     'currencyCode'=>'ZWL',
@@ -4807,6 +4807,5 @@ function addCountries(){
     'geonameId'=>'en-ZW,sn,nr,nd',
    
    
-    ] );
+    ]);
 }
-?>

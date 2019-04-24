@@ -13,7 +13,7 @@ class AddMoreDescription extends Migration
      */
     public function up()
     {
-        Schema::table('countries', function($table) {
+        Schema::table('countries', function ($table) {
             $table->dropColumn('country_name');
             $table->string('countryName')->unique();
             $table->dropColumn('country_code');
@@ -24,9 +24,9 @@ class AddMoreDescription extends Migration
             $table->string('north');
             $table->string('south');
             $table->string('east');
-            $table->string('west'); 
-            $table->string('capital'); 
-            $table->string('continentName'); 
+            $table->string('west');
+            $table->string('capital');
+            $table->string('continentName');
             $table->string('continent');
             $table->string('languages');
             $table->string('isoAlpha3');
@@ -41,7 +41,7 @@ class AddMoreDescription extends Migration
      */
     public function down()
     {
-        Schema::table('countries', function($table) {
+        Schema::table('countries', function ($table) {
             $table->string('country_name')->unique();
             $table->string('country_code');
             $table->dropColumn('countryName');
@@ -52,9 +52,9 @@ class AddMoreDescription extends Migration
             $table->dropColumn('north');
             $table->dropColumn('south');
             $table->dropColumn('east');
-            $table->dropColumn('west'); 
-            $table->dropColumn('capital'); 
-            $table->dropColumn('continentName'); 
+            $table->dropColumn('west');
+            $table->dropColumn('capital');
+            $table->dropColumn('continentName');
             $table->dropColumn('continent');
             $table->dropColumn('languages');
             $table->dropColumn('isoAlpha3');

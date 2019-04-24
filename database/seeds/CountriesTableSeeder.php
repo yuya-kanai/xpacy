@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+
 include 'list.php';
 use Goodby\CSV\Import\Standard\Lexer;
 use Goodby\CSV\Import\Standard\Interpreter;
@@ -35,7 +36,7 @@ class CountriesTableSeeder extends Seeder
         $config->setDelimiter(",");
         $lexer = new Lexer($config);
         $interpreter = new Interpreter();
-        $interpreter->addObserver(function(array $row) {
+        $interpreter->addObserver(function (array $row) {
             $country_code   = $row[1];
             $country_name   = $row[2];
             $currency_code  = $row[3];
@@ -69,14 +70,8 @@ class CountriesTableSeeder extends Seeder
                 'iso_alpha3'     => $iso_alpha3,
                 'geoname_id'     => $geoname_id,
             ]);
-
-
         });
 
         $lexer->parse(base_path() . self::CSV_FILENAME, $interpreter);
-                
-    } 
-
+    }
 }
-
-    
