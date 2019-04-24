@@ -88,10 +88,12 @@ class ScrapeRestaurants extends Command
                     $xpath
                 )
             );
-            echo($element->getAttribute($attribute));
-            return $element->getAttribute($attribute);
+            if($attribute == 'text'){
+                return $element->getText();
+            }else{
+                return $element->getAttribute($attribute);
+            }
         }
-        echo('not found'. $xpath);
         return null;
     }
 
@@ -133,25 +135,31 @@ class ScrapeRestaurants extends Command
         $tabs = array_slice($current_handle, 1);
         foreach ($tabs as &$tab) {
             $this->driver->switchTo()->window($tab);
+            $price_label_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div";
             $price_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div[2]";
             $map_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
             $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/div/a";
-            $image_xpath = "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
+            $image_xpath = "//div[contains(@class,'photos_and_contact_links_container')]/div/div[2]/div[2]/div/div/img";
 
-            $current_url = $this->driver->getCurrentURL();
             $xpath_web = WebDriverBy::xpath($price_xpath);
+
             $price=null;
-            $latitude=null;
-            $longitude=null;
+            $coordinates=[];
+
             if (count($this->driver->findElements($xpath_web)) > 0) {
-                echo('ho!!');
-                $element=$this->driver->findElement($xpath_web);
-                $price = $element->getText();
-                $map_url = $this->getWithXpath('src',$map_xpath);
-                $website_xpath = $this->getWithXpath('href',$website_xpath);
-                $image_xpath = $this->getWithXpath('src',$image_xpath);
-                echo($element->getText());
-                echo($map_url);
+                $price_label = $this->getWithXpath('text',$price_label_xpath);
+                if(preg_match("/price/i",$price_label)){
+                    $element=$this->driver->findElement($xpath_web);
+                    $price = $element->getText();
+                    $map_url = $this->getWithXpath('src',$map_xpath);
+                    preg_match('/(\.|\d)*,(\.|\d)*\z/', $map_url, $coordinates_string_array);
+                    $coordinates_string = $coordinates_string_array[0];
+                    $coordinates = explode(',',$coordinates_string);
+
+                    $trip_advisor_url = $this->driver->getCurrentURL();
+                    $website_url = $this->getWithXpath('href',$website_xpath);
+                    $image_url = $this->getWithXpath('src',$image_xpath);
+                }
             }
         }
     }
