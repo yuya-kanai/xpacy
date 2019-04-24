@@ -33,7 +33,7 @@ class CountriesTableSeeder extends Seeder
         $this->command->info('Importing csv');
 
         $config = new LexerConfig();
-        $config->setDelimiter(",");
+        $config->setDelimiter(',');
         $lexer = new Lexer($config);
         $interpreter = new Interpreter();
         $interpreter->addObserver(function (array $row) {
