@@ -19,7 +19,7 @@
     <div class="text-center">
         <img src="~/static/map.png" class="img-responsive rounded-circle" alt="map" width="460" height="345">
       <div class="title">
-        Expatso
+        Xpacy
       </div>
       <div>
         <span class="subtitle m-4">
