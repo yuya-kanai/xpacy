@@ -48,7 +48,7 @@ class ScrapeRestaurants extends Command
         $this->driver = RemoteWebDriver::create($host, DesiredCapabilities::chrome());
         $this->driver->manage()->window()->maximize();
         $this->driver->get('https://www.tripadvisor.com/Restaurants');
-        $this->selenium();
+        $this->selenium('Chiang Mai');
         // $crawler = \Goutte::request('GET', 'https://duckduckgo.com/html/?q=Laravel');
         // $crawler->filter('.result__title .result__a')->each(function ($node) {
         //     \App\Food::create([
@@ -97,10 +97,10 @@ class ScrapeRestaurants extends Command
         return null;
     }
 
-    private function selenium()
+    private function selenium(String $city)
     {
         $search_box = $this->driver->findElement(WebDriverBy::cssSelector('.typeahead_input'));
-        $search_box->sendKeys('Chiang Mai');
+        $search_box->sendKeys($city);
 
         $submit_button = $this->driver->findElement(WebDriverBy::cssSelector('#SUBMIT_RESTAURANTS'));
         $submit_button->click();
@@ -139,8 +139,8 @@ class ScrapeRestaurants extends Command
             $price_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div[2]";
             $price_label_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div";
             $map_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
-            $website_click_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/div/span[2]";
-            $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/a";
+            $website_click_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__contactRow')]/div/span/div/span[2]";
+            $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__contactRow')]/div/span/a";
             $image_xpath = "//div[contains(@class,'photos_and_contact_links_container')]/div/div[2]/div[2]/div/div/img";
 
             $price_ref = WebDriverBy::xpath($price_xpath);
@@ -177,8 +177,9 @@ class ScrapeRestaurants extends Command
                         'image_url'   => $image_url,
                         'trip_advisor_url'   => $trip_advisor_url,
                         'homepage_url'   => $website_url,
-                        'latitude'   => $coordinates[1],
-                        'longitude'   => $coordinates[1]
+                        'latitude'   => $coordinates[0],
+                        'longitude'   => $coordinates[1],
+                        'city'   => $city
                     ]);
                 }
             }
