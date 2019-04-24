@@ -139,17 +139,27 @@ class ScrapeRestaurants extends Command
             $price_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div[2]";
             $price_label_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div";
             $map_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
-            $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/div/a";
+            $website_click_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/div/span[2]";
+            $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/a";
             $image_xpath = "//div[contains(@class,'photos_and_contact_links_container')]/div/div[2]/div[2]/div/div/img";
 
+            $price_ref = WebDriverBy::xpath($price_xpath);
 
             $name=null;
             $price=null;
             $coordinates=[];
 
-            if (count($this->driver->findElements($xpath_web)) > 0) {
+            if (count($this->driver->findElements($price_ref)) > 0) {
                 $price_label = $this->getWithXpath('text',$price_label_xpath);
                 if(preg_match("/price/i",$price_label)){
+                    $this->clickWithXpath($website_click_xpath);
+                    $this->driver->wait(10, 500)->until(
+                        WebDriverExpectedCondition::presenceOfElementLocated(
+                            WebDriverBy::xpath(
+                                $website_xpath
+                            )
+                        )
+                    );
 
                     $map_url = $this->getWithXpath('src',$map_xpath);
                     preg_match('/(\.|\d)*,(\.|\d)*\z/', $map_url, $coordinates_string_array);
@@ -161,6 +171,15 @@ class ScrapeRestaurants extends Command
                     $trip_advisor_url = $this->driver->getCurrentURL();
                     $website_url = $this->getWithXpath('href',$website_xpath);
                     $image_url = $this->getWithXpath('src',$image_xpath);
+                    \App\Food::create([
+                        'name'   => $name,
+                        'price'   => $price,
+                        'image_url'   => $image_url,
+                        'trip_advisor_url'   => $trip_advisor_url,
+                        'homepage_url'   => $website_url,
+                        'latitude'   => $coordinates[1],
+                        'longitude'   => $coordinates[1]
+                    ]);
                 }
             }
         }
