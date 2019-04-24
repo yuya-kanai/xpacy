@@ -134,6 +134,10 @@ class ScrapeRestaurants extends Command
             $this->driver->switchTo()->window($tab);
             $price_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div[2]";
             $map_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
+            $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
+            $image_xpath = "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
+
+            $current_url = $this->driver->getCurrentURL();
             $xpath_web = WebDriverBy::xpath($price_xpath);
             $price=null;
             $latitude=null;
