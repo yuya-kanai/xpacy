@@ -14,6 +14,7 @@ class FoodController extends Controller
      */
     public function index()
     {
+        return Food::all();
         //
     }
 
@@ -46,6 +47,7 @@ class FoodController extends Controller
      */
     public function show(Food $food)
     {
+        return $food;
         //
     }
 

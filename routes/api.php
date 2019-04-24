@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 Route::resource('countries', 'countryController')->only([
     'index', 'show'
 ]);
+Route::resource('foods', 'foodController')->only([
+    'index', 'show'
+]);
 
 // Route::get('/country', function (Request $request) {
 //     return App\Country::all();
