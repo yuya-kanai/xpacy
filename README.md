@@ -1,7 +1,7 @@
 # Xpacy
 Cost of living listing website
 
-# Linter fix
+## Linter fix
  ./vendor/bin/php-cs-fixer fix ./
  
  ## Linter show fix
