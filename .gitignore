@@ -1,18 +1,19 @@
 .DS_Store
 /node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
+/xpacy/public/hot
+/xpacy/public/storage
+/xpacy/storage/*.key
+vendor/
 /.idea
 /.vagrant
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.php_cs.cache
 .env
 .nuxt
-/dist
+dist/
 /public/_nuxt
 *.jar
 *.swp
@@ -20,7 +21,7 @@ chromedriver
 *.retry
 
 # ansible
-/node_modules
+node_modules
 /public/hot
 /public/storage
 /storage/*.key
