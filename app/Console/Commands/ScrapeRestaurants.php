@@ -34,10 +34,6 @@ class ScrapeRestaurants extends Command
     public function __construct()
     {
         parent::__construct();
-        $host = 'http://localhost:4444/wd/hub';
-        $this->driver = RemoteWebDriver::create($host, DesiredCapabilities::chrome());
-        $this->driver->manage()->window()->maximize();
-        $this->driver->get('https://www.tripadvisor.com/Restaurants');
     }
 
     /**
@@ -48,6 +44,10 @@ class ScrapeRestaurants extends Command
     public function handle()
     {
         $this->info('Start crawling!!');
+        $host = 'http://localhost:4444/wd/hub';
+        $this->driver = RemoteWebDriver::create($host, DesiredCapabilities::chrome());
+        $this->driver->manage()->window()->maximize();
+        $this->driver->get('https://www.tripadvisor.com/Restaurants');
         $this->selenium();
         // $crawler = \Goutte::request('GET', 'https://duckduckgo.com/html/?q=Laravel');
         // $crawler->filter('.result__title .result__a')->each(function ($node) {
@@ -135,27 +135,29 @@ class ScrapeRestaurants extends Command
         $tabs = array_slice($current_handle, 1);
         foreach ($tabs as &$tab) {
             $this->driver->switchTo()->window($tab);
-            $price_label_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div";
+            $name_xpath="//div[contains(@class,'restaurantName')]/h1";
             $price_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div[2]";
+            $price_label_xpath="//div[contains(@class,'restaurants-detail-overview-cards-DetailsSectionOverviewCard__detailCard')]/div[2]/div/div";
             $map_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__cardColumn')]/span/div/span/img";
             $website_xpath= "//div[contains(@class,'restaurants-detail-overview-cards-LocationOverviewCard__detailLink')]/span/div/a";
             $image_xpath = "//div[contains(@class,'photos_and_contact_links_container')]/div/div[2]/div[2]/div/div/img";
 
-            $xpath_web = WebDriverBy::xpath($price_xpath);
 
+            $name=null;
             $price=null;
             $coordinates=[];
 
             if (count($this->driver->findElements($xpath_web)) > 0) {
                 $price_label = $this->getWithXpath('text',$price_label_xpath);
                 if(preg_match("/price/i",$price_label)){
-                    $element=$this->driver->findElement($xpath_web);
-                    $price = $element->getText();
+
                     $map_url = $this->getWithXpath('src',$map_xpath);
                     preg_match('/(\.|\d)*,(\.|\d)*\z/', $map_url, $coordinates_string_array);
                     $coordinates_string = $coordinates_string_array[0];
                     $coordinates = explode(',',$coordinates_string);
 
+                    $price = $this->getWithXpath('text',$price_xpath);
+                    $name = $this->getWithXpath('text',$name_xpath);
                     $trip_advisor_url = $this->driver->getCurrentURL();
                     $website_url = $this->getWithXpath('href',$website_xpath);
                     $image_url = $this->getWithXpath('src',$image_xpath);
