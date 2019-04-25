@@ -1,6 +1,9 @@
 # Xpacy
 Cost of living listing website
 
+## Vagrant
+`vagrant up`
+
 ## Server side
 `php artisan serve`
 
@@ -12,3 +15,4 @@ Cost of living listing website
  
  ## Linter show fix
 `./vendor/bin/php-cs-fixer fix --dry-run --diff ./`
+
