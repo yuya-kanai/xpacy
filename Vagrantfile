@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", type: "nfs", rsync__exclude: ".git/"
     
   
-  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.32.10"
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
   end
@@ -20,15 +20,17 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-EOT
         # timezone
         cp -p /usr/share/zoneinfo/Japan /etc/localtime
+
         # iptables off
         /sbin/iptables -F
         /sbin/service iptables stop
         /sbin/chkconfig iptables off
         
         # yum and wget
-        sudo yum -y update
-        yum install wget
-        
+        dnf clean packages
+        sudo yum update -y
+        sudo yum install -y wget
+
         # mysql
         wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
         sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
@@ -36,19 +38,29 @@ Vagrant.configure("2") do |config|
         sudo yum install mysql-server
 
         # php
-        sudo yum install php php-pear php-mysql
-        sudo mkdir /var/log/php
-        sudo chown apache /var/log/php
+        wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm ~/
+        rpm -ivh ~/epel-release-7-9.noarch.rpm
+        sudo yum install epel-release yum-utils
+        sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+        sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        sudo yum-config-manager --enable remi-php73
+        sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+        sudo yum install -y remi-php71 php php-devel php-mbstring php-pdo php-gd php-xml php-mcrypt php-mysqlnd php-cli php-gd php-opcache
+
+        # sudo mkdir /var/log/php
+        # sudo chown apache /var/log/php
+
+        # composer
+        yum install composer 
+        chmod 777 /vagrant/xpacy
+        cd /vagrant/xpacy
 
         # Apache
         yum -y install httpd
-
         #Transfer files
-        cp -a /vagrant/httpd.conf /etc/httpd/conf/
-        cp -a /vagrant/php.conf /etc/httpd/conf.d/
-        
 
-        /sbin/service httpd restart
-        /sbin/chkconfig httpd on
+        # /sbin/service httpd restart
+        # /sbin/chkconfig httpd on
+        php artisan serve --host 0.0.0.0
   EOT
 end
