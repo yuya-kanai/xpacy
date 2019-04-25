@@ -11,10 +11,10 @@
       selinux: state=disabled
  
     # ロケールの設定
-    - name: add ja_JP.UTF-8 to locale
+    - name: Add ja_JP.UTF-8 to locale
       shell: localedef -f UTF-8 -i ja_JP /usr/lib/locale/ja_JP.UTF-8
  
-    - name: set timezone to Asia/Tokyo
+    - name: Set timezone to Asia/Tokyo
       timezone:
         name: Asia/Tokyo
  
@@ -32,13 +32,13 @@
     #     replace='AllowOverride All'
  
     # PHP7.1をインストール
-    - name: yum install epel-repease
+    - name: Install epel-repease
       yum: name=epel-release state=installed
  
-    - name: add remi-repo repository
+    - name: Add remi-repo repository
       command: rpm -ih http://rpms.famillecollet.com/enterprise/remi-release-7.rpm creates=/etc/yum.repos.d/remi.repo
  
-    - name: PHP7.1をインストール
+    - name: Install PHP7.1
       yum: name={{ item }} enablerepo=remi,remi-php71 state=installed
       with_items:
         - php
@@ -50,46 +50,46 @@
         - php-pdo
         - php-xml
  
-    - name: composerをインストール
+    - name: Install composer
       yum: name=composer enablerepo=remi,remi-php71 state=installed
 
-    - name: compose global install laravel
+    - name: Compose global install laravel
       composer:
         command: require
         global_command: yes
         arguments: laravel/installer
 
-    - name: PHPをタイムゾーンの設定
+    - name: Set time zone for PHP
       replace: >
         dest=/etc/php.ini
         regexp="^;date\.timezone ="
         replace="date.timezone = Asia/Tokyo"
  
     # MySQL5.6
-    - name: MySQL5.6のリポジトリを追加
+    - name: Add repository MySQL5.6
       command: >
         yum -y install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
         creates=/etc/yum.repos.d/mysql-community.repo
  
-    - name: MySQLをインストール
+    - name: Install MySQL
       yum: name={{item}}
       with_items:
         - mysql-server
         - MySQL-python
  
-    - name: MySQLを起動
+    - name: Run MySQL
       service: name=mysqld state=started enabled=yes
  
-    - name: MySQLのユーザーを追加
+    - name: Add user to MySQL
       mysql_user: name={{ mysql_user_name }} password={{ mysql_user_password }} priv=*.*:ALL
  
-    - name: composer install
+    - name: Composer install
       composer:
         command: install
         global_command: yes
         working_dir: /vagrant/xpacy
 
-    - name: php artisan serve
+    - name: Php artisan serve
       shell: php artisan serve --host=0.0.0.0
       args:
         chdir: /vagrant/xpacy
