@@ -1,0 +1,99 @@
+---
+- hosts: all
+  sudo: yes
+  vars:
+    # MySQLのユーザーとパスワードを、変数に格納
+    mysql_user_name: user
+    mysql_user_password: password
+  tasks:
+    # SELinux停止
+    - name: Disable SELinux
+      selinux: state=disabled
+ 
+    # ロケールの設定
+    - name: add ja_JP.UTF-8 to locale
+      shell: localedef -f UTF-8 -i ja_JP /usr/lib/locale/ja_JP.UTF-8
+ 
+    - name: set timezone to Asia/Tokyo
+      timezone:
+        name: Asia/Tokyo
+ 
+    # Apacheをインストール
+    # - name: Install Apache
+    #   yum: name=httpd
+ 
+    # - name: Apache
+    #   service: name=httpd state=started enabled=yes
+ 
+    # - name: .htaccessを有効にする
+    #   replace: 
+    #     dest=/etc/httpd/conf/httpd.conf
+    #     regexp='AllowOverride None'
+    #     replace='AllowOverride All'
+ 
+    # PHP7.1をインストール
+    - name: yum install epel-repease
+      yum: name=epel-release state=installed
+ 
+    - name: add remi-repo repository
+      command: rpm -ih http://rpms.famillecollet.com/enterprise/remi-release-7.rpm creates=/etc/yum.repos.d/remi.repo
+ 
+    - name: PHP7.1をインストール
+      yum: name={{ item }} enablerepo=remi,remi-php71 state=installed
+      with_items:
+        - php
+        - php-devel
+        - php-fpm
+        - php-mbstring
+        - php-mcrypt
+        - php-mysqlnd
+        - php-pdo
+        - php-xml
+ 
+    - name: composerをインストール
+      yum: name=composer enablerepo=remi,remi-php71 state=installed
+
+    - name: compose global install laravel
+      composer:
+        command: require
+        global_command: yes
+        arguments: laravel/installer
+
+    - name: PHPをタイムゾーンの設定
+      replace: >
+        dest=/etc/php.ini
+        regexp="^;date\.timezone ="
+        replace="date.timezone = Asia/Tokyo"
+ 
+    # MySQL5.6
+    - name: MySQL5.6のリポジトリを追加
+      command: >
+        yum -y install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
+        creates=/etc/yum.repos.d/mysql-community.repo
+ 
+    - name: MySQLをインストール
+      yum: name={{item}}
+      with_items:
+        - mysql-server
+        - MySQL-python
+ 
+    - name: MySQLを起動
+      service: name=mysqld state=started enabled=yes
+ 
+    - name: MySQLのユーザーを追加
+      mysql_user: name={{ mysql_user_name }} password={{ mysql_user_password }} priv=*.*:ALL
+ 
+    - name: composer install
+      composer:
+        command: install
+        global_command: yes
+        working_dir: /vagrant/xpacy
+
+    - name: php artisan serve
+      shell: php artisan serve --host=0.0.0.0
+      args:
+        chdir: /vagrant/xpacy
+
+    # Apache再起動
+    # - name: Apache再起動
+    #  service: name=httpd state=restarted
