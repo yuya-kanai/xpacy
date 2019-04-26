@@ -1,0 +1,14 @@
+---
+  - name: java is installed?
+    become: True
+    yum: name={{ item }} state=latest
+    with_items:
+      - java-1.8.0-openjdk
+      - java-1.8.0-openjdk-devel
+
+  - name: Set JAVA_HOME
+    lineinfile:
+      dest: ~/.bash_profile
+      state: present
+      regexp: '^JAVA_HOME'
+      line: 'export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk'

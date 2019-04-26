@@ -8,6 +8,8 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "base"
   config.vm.box = "centos/7"
+  config.vm.network :forwarded_port, id: "http", guest: 80, host: 8823
+  config.vm.network :forwarded_port, id: "ssh", guest: 22, host: 22023
   config.vm.network "private_network", ip: "192.168.32.10"
   config.vm.synced_folder ".", "/vagrant", type: "nfs", rsync__exclude: ".git/"
 

@@ -1,0 +1,4 @@
+scheme: http
+tmp: /tmp
+app_dir: /vagrant/xpacy/
+app_env: local

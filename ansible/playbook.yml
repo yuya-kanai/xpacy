@@ -5,95 +5,100 @@
     # MySQLのユーザーとパスワードを、変数に格納
     mysql_user_name: user
     mysql_user_password: password
-  tasks:
-    # SELinux停止
-    - name: Disable SELinux
-      selinux: state=disabled
+  roles:
+    - common
+    - java
+    - chromedriver
+    - start
+  # tasks:
+  #   # SELinux停止
+  #   - name: Disable SELinux
+  #     selinux: state=disabled
  
-    # ロケールの設定
-    - name: Add ja_JP.UTF-8 to locale
-      shell: localedef -f UTF-8 -i ja_JP /usr/lib/locale/ja_JP.UTF-8
+  #   # ロケールの設定
+  #   - name: Add ja_JP.UTF-8 to locale
+  #     shell: localedef -f UTF-8 -i ja_JP /usr/lib/locale/ja_JP.UTF-8
  
-    - name: Set timezone to Asia/Tokyo
-      timezone:
-        name: Asia/Tokyo
+  #   - name: Set timezone to Asia/Tokyo
+  #     timezone:
+  #       name: Asia/Tokyo
  
-    # Apacheをインストール
-    # - name: Install Apache
-    #   yum: name=httpd
+  #   # Apacheをインストール
+  #   # - name: Install Apache
+  #   #   yum: name=httpd
  
-    # - name: Apache
-    #   service: name=httpd state=started enabled=yes
+  #   # - name: Apache
+  #   #   service: name=httpd state=started enabled=yes
  
-    # - name: .htaccessを有効にする
-    #   replace: 
-    #     dest=/etc/httpd/conf/httpd.conf
-    #     regexp='AllowOverride None'
-    #     replace='AllowOverride All'
+  #   # - name: .htaccessを有効にする
+  #   #   replace: 
+  #   #     dest=/etc/httpd/conf/httpd.conf
+  #   #     regexp='AllowOverride None'
+  #   #     replace='AllowOverride All'
  
-    # PHP7.1をインストール
-    - name: Install epel-repease
-      yum: name=epel-release state=installed
+  #   # PHP7.1をインストール
+  #   - name: Install epel-repease
+  #     yum: name=epel-release state=installed
  
-    - name: Add remi-repo repository
-      command: rpm -ih http://rpms.famillecollet.com/enterprise/remi-release-7.rpm creates=/etc/yum.repos.d/remi.repo
+  #   - name: Add remi-repo repository
+  #     command: rpm -ih http://rpms.famillecollet.com/enterprise/remi-release-7.rpm creates=/etc/yum.repos.d/remi.repo
  
-    - name: Install PHP7.1
-      yum: name={{ item }} enablerepo=remi,remi-php71 state=installed
-      with_items:
-        - php
-        - php-devel
-        - php-fpm
-        - php-mbstring
-        - php-mcrypt
-        - php-mysqlnd
-        - php-pdo
-        - php-xml
+  #   - name: Install PHP7.1
+  #     yum: name={{ item }} enablerepo=remi,remi-php71 state=installed
+  #     with_items:
+  #       - php
+  #       - php-devel
+  #       - php-fpm
+  #       - php-mbstring
+  #       - php-mcrypt
+  #       - php-mysqlnd
+  #       - php-pdo
+  #       - php-xml
  
-    - name: Install composer
-      yum: name=composer enablerepo=remi,remi-php71 state=installed
+  #   - name: Install composer
+  #     yum: name=composer enablerepo=remi,remi-php71 state=installed
 
-    - name: Compose global install laravel
-      composer:
-        command: require
-        global_command: yes
-        arguments: laravel/installer
+  #   - name: Compose global install laravel
+  #     composer:
+  #       command: require
+  #       global_command: yes
+  #       arguments: laravel/installer
 
-    - name: Set time zone for PHP
-      replace: >
-        dest=/etc/php.ini
-        regexp="^;date\.timezone ="
-        replace="date.timezone = Asia/Tokyo"
+  #   - name: Set time zone for PHP
+  #     replace: >
+  #       dest=/etc/php.ini
+  #       regexp="^;date\.timezone ="
+  #       replace="date.timezone = Asia/Tokyo"
  
-    # MySQL5.6
-    - name: Add repository MySQL5.6
-      command: >
-        yum -y install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
-        creates=/etc/yum.repos.d/mysql-community.repo
+  #   # MySQL5.6
+  #   - name: Add repository MySQL5.6
+  #     command: >
+  #       yum -y install http://dev.mysql.com/get/mysql-community-release-el6-5.noarch.rpm
+  #       creates=/etc/yum.repos.d/mysql-community.repo
  
-    - name: Install MySQL
-      yum: name={{item}}
-      with_items:
-        - mysql-server
-        - MySQL-python
+  #   - name: Install MySQL
+  #     yum: name={{item}}
+  #     with_items:
+  #       - mysql-server
+  #       - MySQL-python
  
-    - name: Run MySQL
-      service: name=mysqld state=started enabled=yes
+  #   - name: Run MySQL
+  #     service: name=mysqld state=started enabled=yes
  
-    - name: Add user to MySQL
-      mysql_user: name={{ mysql_user_name }} password={{ mysql_user_password }} priv=*.*:ALL
+  #   - name: Add user to MySQL
+  #     mysql_user: name={{ mysql_user_name }} password={{ mysql_user_password }} priv=*.*:ALL
  
-    - name: Composer install
-      composer:
-        command: install
-        global_command: yes
-        working_dir: /vagrant/xpacy
+  #   - name: Composer install
+  #     composer:
+  #       command: install
+  #       global_command: yes
+  #       working_dir: /vagrant/xpacy
 
-    - name: Php artisan serve
-      shell: php artisan serve --host=0.0.0.0
-      args:
-        chdir: /vagrant/xpacy
+  #   - name: Php artisan serve
+  #     shell: php artisan serve --host=0.0.0.0
+  #     args:
+  #       chdir: /vagrant/xpacy
 
-    # Apache再起動
-    # - name: Apache再起動
-    #  service: name=httpd state=restarted
+  #   # Apache再起動
+  #   # - name: Apache再起動
+  #   #  service: name=httpd state=restarted
