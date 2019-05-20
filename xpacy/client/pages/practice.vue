@@ -1,17 +1,25 @@
 <template>
   <div class="flex-container">
     <Navbar/>
-    <div style="flex-grow:1; background-color: red"/>
-    <div style="flex-grow:1; background-color: green"/>
-    <div style="flex-grow:1; background-color: blue"/>
+    <div style="flex-grow:1; background-color: white;">
+      <Gallery/>
+    </div>
+    <div style="flex-grow:1; background-color: white; ">
+      <Gallery/>
+    </div>
+    <div style="flex-grow:1; background-color: white">
+      <Gallery/>
+    </div>
   </div>
 </template>
 
 
 <script>
 import Navbar from '~/components/Navbar'
+import Gallery from './motion/Gallery'
 export default {
   components: {
+    Gallery,
     Navbar
   },
   data: () => ({
@@ -43,14 +51,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: aqua;
   flex-direction: column;
-  height:100%;
   width:100%;
   position: absolute;
-}
-.mini-map {
-  width: 100%;
-  height: 600px !important;
 }
 </style>

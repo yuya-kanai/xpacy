@@ -1,23 +1,24 @@
 <template>
   <div>
     <div class="controls">
-      <button @click="previous">Previous</button>
-      <input v-model="current" type="range" min="0" :max="photos.length - 1"/>
-      <button @click="next">Next</button>
+      <button type="button" class="btn btn-outline-light" @click="previous">Previous</button>
+      <!-- <input v-model="current" type="range" min="0" :max="photos.length - 1"/> -->
+      <button type="button" class="btn btn-outline-light" @click="next">Next</button>
     </div>
     <div class="demo">
       <Motion :values="sizesNormalized"
-              tag="div"
-              class="demo-inner"
+        tag="div"
+        class="demo-inner"
       >
         <template scope="resizes">
           <PhotosContainer
               class="container"
               :sizes="sizes"
               :current="current"
-              :style="{ width: `${resizes.layout.width}px`, height: `${resizes.layout.height}px` }"
+              :style="{ width: `100%`, left:`${width/2 - resizes.layout.width/2}px`, height: `${resizes.layout.height}px` }"
           >
             <template scope="pcProps">
+                              <div class="gradient"/>
               <div class="photos"
                    :style="{ left: `${pcProps.left}px` }"
               >
@@ -47,7 +48,8 @@ export default {
   components: { Motion, PhotosContainer },
   data () {
     return {
-      current: 0,
+      current: 1,
+      width: this.width,
     }
   },
 
@@ -106,6 +108,13 @@ export default {
       ]
     },
   },
+  mounted: function () {
+      this.handleResize()
+      window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.handleResize)
+  },
 
   methods: {
     next () {
@@ -117,6 +126,9 @@ export default {
       if (--this.current < 0) {
         this.current = this.photos.length - 1
       }
+    },
+    handleResize: function() {
+      this.width = window.innerWidth;
     },
     leftSpace (sizes) {
       const lefts = Array(this.photos.length)
@@ -136,7 +148,7 @@ export default {
       }
       return lefts
     },
-  },
+  }
 }
 </script>
 
@@ -144,7 +156,18 @@ export default {
 .demo {
   display: flex;
   align-items: center;
-  height: 600px;
+}
+
+.btn {
+  margin: 20px;
+}
+.gradient {
+  position: absolute;
+  right:0;
+  top:0;bottom: 0;
+  width:50%;
+  background-image: linear-gradient(to right,transparent, black,black);
+  z-index: 1;
 }
 
 .demo-inner {
@@ -165,7 +188,9 @@ export default {
 
 .controls {
   display: flex;
-  max-width: 500px;
+  padding: 30px;
+  width:80%;
+  background-color:dimgrey;
 }
 
 .controls button {

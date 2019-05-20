@@ -1,46 +1,17 @@
 <template>
   <div class="landing">
-    <h1 class="landing__title">Vue Motion</h1>
-    <h2 class="landing__subtitle">Natural animations for Vue</h2>
 
-    <VueLogo/>
+          <Gallery class="landing__content"/>
 
-    <section>
-      <Tabs v-model="currentTab">
-        <Tab :index="0">Playground</Tab>
-        <Tab :index="1">Gallery Example</Tab>
-      </Tabs>
-
-      <div class="landing__docs-link">
-        <a href="#/home">Documentation</a>
-      </div>
-
-      <Motion tag="div" class="landing__main" :values="tabsPositions">
-        <template scope="tabs">
-          <Playground ref="first"
-                      class="landing__content"
-                      :style="{ transform: `translateX(${tabs.first}px)` }"/>
-          <Gallery ref="second"
-                   class="landing__content"
-                   :style="{ transform: `translateX(${tabs.second}px)` }"/>
-        </template>
-      </Motion>
-
-    </section>
   </div>
 </template>
 
 <script>
-import {Motion} from 'vue-motion'
-import VueLogo from './VueLogo'
-import Tab from './Tab'
-import Tabs from './Tabs'
-import Playground from './Playground'
 import Gallery from './Gallery'
 
 export default {
 
-  components: { Motion, VueLogo, Tabs, Tab, Playground, Gallery },
+  components: { Gallery },
   data () {
     return {
       currentTab: -1,
@@ -48,21 +19,6 @@ export default {
   },
 
   computed: {
-    tabsPositions () {
-      // always track currentTab as this.$el may change
-      if (!this.$el || this.currentTab >= -1) {
-        return {
-          first: 0,
-          second: 0,
-        }
-      }
-      const first = this.$refs.first
-      const second = this.$refs.second
-      return {
-        first: this.currentTab * -first.$el.offsetWidth,
-        second: (-this.currentTab + 1) * second.$el.offsetWidth,
-      }
-    },
   },
 
   mounted () {
