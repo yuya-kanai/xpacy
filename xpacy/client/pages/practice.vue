@@ -10,17 +10,20 @@
     <div style="flex-grow:1; background-color: white">
       <Gallery/>
     </div>
+    <Map/>
   </div>
 </template>
 
 
 <script>
 import Navbar from '~/components/Navbar'
+import Map from '~/components/Map'
 import Gallery from './motion/Gallery'
 export default {
   components: {
     Gallery,
-    Navbar
+    Navbar,
+    Map
   },
   data: () => ({
     position: [55.607741796855734, 13.018133640289308],

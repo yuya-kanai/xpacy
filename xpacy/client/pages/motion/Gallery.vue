@@ -11,6 +11,10 @@
         class="demo-inner"
       >
         <template scope="resizes">
+          <Map 
+          :width="width/2 - resizes.layout.width/2"
+          :height="resizes.pictures[current].height"
+          />
           <PhotosContainer
               class="container"
               :sizes="sizes"
@@ -18,7 +22,7 @@
               :style="{ width: `100%`, left:`${width/2 - resizes.layout.width/2}px`, height: `${resizes.layout.height}px` }"
           >
             <template scope="pcProps">
-                              <div class="gradient"/>
+              <div class="gradient"/>
               <div class="photos"
                    :style="{ left: `${pcProps.left}px` }"
               >
@@ -28,7 +32,7 @@
                      :style="{
                         width: `${resizes.pictures[i].width}px`, 
                         height: `${resizes.pictures[i].height}px`,
-                        filter: `grayscale(${current==i?10:50}%)`
+                        filter: `grayscale(${current==i?10:70}%)`
                       }"
                      :src="photo.src"
                      @touchstart="next"/>
@@ -44,12 +48,13 @@
 <script>
 import { Motion } from 'vue-motion'
 import PhotosContainer from './PhotosContainer'
+import Map from '~/components/Map'
 
 const base = 'https://github.com/posva/vue-motion/raw/master/docs/static/'
 
 export default {
 
-  components: { Motion, PhotosContainer },
+  components: { Motion, PhotosContainer, Map },
   data () {
     return {
       current: 1,
@@ -193,7 +198,7 @@ export default {
 .controls {
   display: flex;
   padding: 30px;
-  width:80%;
+  width:70%;
   background-color:dimgrey;
 }
 
