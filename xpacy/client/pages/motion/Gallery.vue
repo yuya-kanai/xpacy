@@ -25,7 +25,11 @@
                 <img v-for="(photo, i) in photos"
                      :key="i"
                      class="photo"
-                     :style="{ width: `${resizes.pictures[i].width}px`, height: `${resizes.pictures[i].height}px` }"
+                     :style="{
+                        width: `${resizes.pictures[i].width}px`, 
+                        height: `${resizes.pictures[i].height}px`,
+                        filter: `grayscale(${current==i?10:50}%)`
+                      }"
                      :src="photo.src"
                      @touchstart="next"/>
               </div>
