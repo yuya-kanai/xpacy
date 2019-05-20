@@ -14,6 +14,8 @@ const Register = () => import('~/pages/auth/register').then(m => m.default || m)
 const PasswordReset = () => import('~/pages/auth/password/reset').then(m => m.default || m)
 const PasswordRequest = () => import('~/pages/auth/password/email').then(m => m.default || m)
 
+const Motion = () => import('~/pages/motion/App').then(m => m.default || m)
+
 const Settings = () => import('~/pages/settings/index').then(m => m.default || m)
 const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.default || m)
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
@@ -28,6 +30,9 @@ const routes = [
   {path : '/register', name : 'register', component : Register},
   {path : '/password/reset', name : 'password.request', component : PasswordRequest},
   {path : '/password/reset/:token', name : 'password.reset', component : PasswordReset},
+
+  {path : '/motion', name : 'motion', component : Motion},
+  
 
   {path      : '/settings',
     component : Settings,
