@@ -5,6 +5,7 @@ import {scrollBehavior} from '~/utils'
 Vue.use(Router)
 
 const Home = () => import('~/pages/home').then(m => m.default || m)
+const Practice = () => import('~/pages/practice').then(m => m.default || m)
 const Welcome = () => import('~/pages/welcome').then(m => m.default || m)
 const Map = () => import('~/pages/map').then(m => m.default || m)
 
@@ -21,6 +22,7 @@ const routes = [
   {path : '/', name : 'welcome', component : Welcome},
   {path : '/home', name : 'home', component : Home},
   {path : '/map', name : 'map', component : Map},
+  {path : '/practice', name : 'practice', component : Practice},
 
   {path : '/login', name : 'login', component : Login},
   {path : '/register', name : 'register', component : Register},

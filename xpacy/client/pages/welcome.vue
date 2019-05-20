@@ -13,6 +13,9 @@
         <router-link :to="{ name: 'register' }">
           {{ $t("register") }}
         </router-link>
+        <router-link :to="{ name: 'practice' }">
+          {{ $t("practice") }}
+        </router-link>
         <button @click="getCountries">Country</button>
     </div>
 
