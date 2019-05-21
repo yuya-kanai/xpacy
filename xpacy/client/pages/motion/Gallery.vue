@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="controls">
-      <button type="button" class="btn btn-outline-dark" @click="previous">Previous</button>
-      <input v-model="current" type="range" min="0" :max="photos.length - 1"/>
-      <button type="button" class="btn btn-outline-dark" @click="next">Next</button>
+      <button type="button" class="btn btn-light" @click="previous">Previous</button>
+      <!-- <input v-model="current" type="range" min="0" :max="photos.length - 1"/> -->
+      <button type="button" class="btn btn-light" @click="next">Next</button>
     </div>
     <div class="demo">
       <Motion :values="sizesNormalized"
@@ -12,8 +12,9 @@
       >
         <template scope="resizes">
           <Map 
-          :width="width/2 - resizes.layout.width/2"
-          :height="resizes.pictures[current].height"
+            :width="width/2 - resizes.layout.width/2"
+            :height="resizes.pictures[current].height"
+            :position="resizes.pictures[current]?resizes.pictures[current].position?resizes.pictures[current].position:null:null"
           />
           <PhotosContainer
               class="container"
@@ -30,8 +31,8 @@
                      :key="i"
                      class="photo"
                      :style="{
-                        width: `${resizes.pictures[i].width}px`, 
-                        height: `${resizes.pictures[i].height}px`,
+                        width: `${resizes.pictures[i]?resizes.pictures[i].width:500}px`, 
+                        height: `${resizes.pictures[i]?resizes.pictures[i].height:500}px`,
                         filter: `grayscale(${current==i?10:70}%)`
                       }"
                      :src="photo.src"
@@ -199,15 +200,21 @@ export default {
 }
 
 .controls {
+  float:right;
+  right:0;
+  position:absolute;
+  z-index: 3004;
   display: flex;
-  padding: 30px;
-  width:70%;
-  background-color:white;
+  padding: 40px;
+  width:50%;
+  /* background-image: linear-gradient(to right, transparent, rgba(20,65,132,0.8)); */
+  mix-blend-mode: hard-light;
 }
 
 .controls button {
   flex: 1;
 }
+
 .controls input {
   flex: 3;
 }

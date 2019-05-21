@@ -1,8 +1,9 @@
 <template>
   <div class="flex-container">
     <Navbar/>
+    <fa icon="external-link-alt" />
     <div style="flex-grow:1; background-color: white;">
-      <Gallery :photos="photosArr"/>
+      <Gallery ref="food" :photos="photos"/>
     </div>
     <div style="flex-grow:1; background-color: white; ">
       <Gallery/>
@@ -17,7 +18,6 @@
 
 <script>
 import Navbar from '~/components/Navbar'
-// import Map from '~/components/Map'
 import Gallery from './motion/Gallery'
 import axios from 'axios'
 
@@ -32,8 +32,13 @@ export default {
     position: [55.607741796855734, 13.018133640289308],
     draggable: true,
     popupContent: 'Sentian HQ',
-    photosArr:[]
+    photosArr: []
   }),
+  computed:{
+    photos: function () {
+      return this.photosArr 
+    }
+  },
   created(){
     const self = this
           const base = 'https://github.com/posva/vue-motion/raw/master/docs/static/'
@@ -48,57 +53,38 @@ export default {
           height: 390,
           src: `${base}cat2.jpg`,
         },
-        {
-          width: 500,
-          height: 330,
-          src: `${base}cat3.jpg`,
-        },
-        {
-          width: 491,
-          height: 251,
-          src: `${base}cat4.jpg`,
-        },
-        {
-          width: 447,
-          height: 500,
-          src: `${base}cat5.jpg`,
-        },
-        {
-          width: 320,
-          height: 154,
-          src: 'https://media.giphy.com/media/JEVqknUonZJWU/giphy.gif',
-        },
+        
       ]
     axios.get('/foods')
     .then((res) => {
       self.data = res
-      let something = res.data.map((data)=>{
+      let apiArr = res.data.map((data)=>{
         let src = data.image_url
-        var img = new Image();
-        img.src = src
-        console.log('bababa')
+        // var img = new Image();
+        console.log(src)
+        // img.src = src
         return {
+          ...data,
           src: src,
-          width: 40,
-          height: 50,
+          width: 540,
+          height: 350,
         }
       })
-      console.log(res)
-      console.log('asss',self.photosArr)
+      console.log('original',self.photosArr)
 
-       console.log('hey',res.data.map((data)=>{
-        let src = data.image_url
-        var img = new Image();
-        img.src = src
-        console.log('bababa')
-        return {
-          src: src,
-          width: 264,
-          height: 330,
-        }
-      }))
-      // this.photosArr = something
-      this.$set(this.photosArr, 3, something[0])
+      console.log('new',apiArr)
+      this.$refs.food.handleResize()
+            this.$refs.food.sizesNormalized
+      self.photosArr = apiArr 
+      // this.photosArr.concat(apiArr)
+      // for(let i = 0; i<apiArr.length() ;i++){
+      //   this.$set(this.photosArr, 0, apiArr[0])
+      // }
+      // this.$set(this.photosArr, 1, apiArr[1])
+      // this.$set(this.photosArr, 2, apiArr[2])
+      // this.$set(this.photosArr, 3, apiArr[3])
+      // this.$set(this.photosArr, 4, apiArr[4])
+      // this.$set(this.photosArr, 5, apiArr[5])
       // console.log('asss',self.photosArr)
     })
   },

@@ -14,8 +14,15 @@
 
 <script>
 export default {
+  props: {
+    position: {
+      type:Array,
+      default:function(){return [
+        55.607741796855734, 13.018133640289308
+      ]}
+    }
+  },
   data: () => ({
-    position: [55.607741796855734, 13.018133640289308],
     draggable: true,
     popupContent: 'Sentian HQ'
   }),
