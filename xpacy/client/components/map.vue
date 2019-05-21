@@ -2,10 +2,9 @@
   <span>
     <!-- <b-button variant="danger" @click="logPosition" >Log position</b-button> -->
     <no-ssr>
-      <l-map class="mini-map" :style="miniMap" :zoom=13 :center="position">
-        <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
-        <l-marker :lat-lng="position" :draggable="draggable">
-          <l-popup :content="popupContent"></l-popup>
+      <l-map ref="map" class="mini-map" :style="miniMap" :zoom=23 :center="position">
+        <l-tile-layer url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"></l-tile-layer>
+        <l-marker :lat-lng="position">
         </l-marker>
       </l-map>
     </no-ssr>
@@ -13,6 +12,19 @@
 </template>
 
 <script>
+let L
+if (process.client) {
+  L = require('leaflet')
+  delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
+}
+
+
 export default {
   props: {
     width: {
@@ -25,15 +37,19 @@ export default {
     }
   },
   data: () => ({
-    position: [55.607741796855734, 13.018133640289308],
+    position: [35.6762, 139.6503],
     draggable: false,
     popupContent: 'Sentian HQ'
   }),
   computed: {
     miniMap () {
-        console.log(this.width)
-    return `width:${this.width}px !important; height:${this.height}px !important;`
-    }
+      if(typeof this.$refs !== 'undefined'){
+        if(typeof this.$refs.map !== 'undefined'){
+          this.$refs.map.mapObject.panTo(this.position)
+        }
+      }
+      return `width:${this.width}px !important; height:${this.height}px !important;`
+    },
   },
   methods: {
     logPosition() {
@@ -47,7 +63,6 @@ export default {
 </style>
 <style >
 .mini-map {
-    z-index: 0;
     position: absolute !important;
 }
 </style>

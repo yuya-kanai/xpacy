@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="controls">
-      <button type="button" class="btn btn-outline-light" @click="previous">Previous</button>
-      <!-- <input v-model="current" type="range" min="0" :max="photos.length - 1"/> -->
-      <button type="button" class="btn btn-outline-light" @click="next">Next</button>
+      <button type="button" class="btn btn-outline-dark" @click="previous">Previous</button>
+      <input v-model="current" type="range" min="0" :max="photos.length - 1"/>
+      <button type="button" class="btn btn-outline-dark" @click="next">Next</button>
     </div>
     <div class="demo">
       <Motion :values="sizesNormalized"
@@ -55,35 +55,10 @@ const base = 'https://github.com/posva/vue-motion/raw/master/docs/static/'
 export default {
 
   components: { Motion, PhotosContainer, Map },
-  data () {
-    return {
-      current: 1,
-      width: this.width,
-    }
-  },
-
-  computed: {
-    sizes () {
-      const current = this.photos[this.current]
-      return this.photos.map(photo => ({
-        width: photo.width * (current.height / photo.height),
-        height: current.height,
-      }))
-    },
-    sizesNormalized () {
-      return this.sizes.reduce((res, size, i) => {
-        res.pictures[i] = size
-        return res
-      }, {
-        layout: {
-          width: this.photos[this.current].width,
-          height: this.photos[this.current].height,
-        },
-        pictures: [],
-      })
-    },
-    photos () {
-      return [
+  props: {
+    photos: {
+      type:Array,
+      default:function(){return [
         {
           width: 300,
           height: 450,
@@ -114,7 +89,34 @@ export default {
           height: 154,
           src: 'https://media.giphy.com/media/JEVqknUonZJWU/giphy.gif',
         },
-      ]
+      ]}
+    }
+  },
+  data () {
+    return {
+      current: 1,
+      width: this.width,
+    }
+  },
+  computed: {
+    sizes () {
+      const current = this.photos[this.current]
+      return this.photos.map(photo => ({
+        width: photo.width * (current.height / photo.height),
+        height: current.height,
+      }))
+    },
+    sizesNormalized () {
+      return this.sizes.reduce((res, size, i) => {
+        res.pictures[i] = size
+        return res
+      }, {
+        layout: {
+          width: this.photos[this.current].width,
+          height: this.photos[this.current].height,
+        },
+        pictures: [],
+      })
     },
   },
   mounted: function () {
@@ -187,6 +189,7 @@ export default {
   position: relative;
   overflow: hidden;
   margin: auto;
+  margin-left: 20px;
   max-width: 100%;
 }
 
@@ -199,7 +202,7 @@ export default {
   display: flex;
   padding: 30px;
   width:70%;
-  background-color:dimgrey;
+  background-color:white;
 }
 
 .controls button {
