@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div
+    @mouseover="hover = true"
+    @mouseleave="hover = false"
+  >
     <div class="controls">
-      <button type="button" class="btn btn-light" @click="previous">Previous</button>
-      <!-- <input v-model="current" type="range" min="0" :max="photos.length - 1"/> -->
-      <button type="button" class="btn btn-light" @click="next">Next</button>
+      <!-- <button type="button" class="btn btn-light" @click="previous">Previous</button> -->
+      <input v-model="current" class="slider" type="range" min="0" :max="photos.length - 1"/>
+      <!-- <button type="button" class="btn btn-light" @click="next">Next</button> -->
     </div>
     <div class="demo">
       <Motion :values="sizesNormalized"
@@ -98,6 +101,7 @@ export default {
     return {
       current: 1,
       width: this.width,
+      hover: false,
     }
   },
   computed: {
@@ -130,6 +134,8 @@ export default {
   },
 
   methods: {
+    mouseLeft () {
+    },
     next () {
       if (++this.current >= this.photos.length) {
         this.current = 0
@@ -202,13 +208,45 @@ export default {
 .controls {
   float:right;
   right:0;
+  bottom:0;
   position:absolute;
   z-index: 3004;
   display: flex;
   padding: 40px;
-  width:50%;
+  width:30%;
   /* background-image: linear-gradient(to right, transparent, rgba(20,65,132,0.8)); */
   mix-blend-mode: hard-light;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;   
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  opacity: 1;
+  background: rgb(76, 147, 175);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgb(76, 147, 175);
+  cursor: pointer;
 }
 
 .controls button {
@@ -219,3 +257,4 @@ export default {
   flex: 3;
 }
 </style>
+

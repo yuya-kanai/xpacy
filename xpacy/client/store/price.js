@@ -16,7 +16,7 @@ export const getters = {
 // Mutations
 export const mutations = {
   set_restaurant(state) {
-    state.restaurant ++
+    state.restaurant_price ++
   },
   set_housing(state, housing) {
     state.token = housing

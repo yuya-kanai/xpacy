@@ -2,15 +2,12 @@
   <div class="flex-container">
     <Navbar/>
     <div class="gallery-container">
-      <div class="gallery-inactive"> Restaurants: $250 </div>
       <Gallery ref="food" class="gallery" :photos="photos"/>
     </div>
     <div class="gallery-container">
-      <div class="gallery-inactive"> Housing: $250 </div>
       <Gallery class="gallery"/>
     </div>
     <div class="gallery-container">
-      <div class="gallery-inactive"> Transport: $250 </div>
       <Gallery class="gallery"/>
     </div>
     <!-- <Map/> -->
@@ -79,7 +76,7 @@ export default {
 
       console.log('new',apiArr)
       this.$refs.food.handleResize()
-            this.$refs.food.sizesNormalized
+      this.$refs.food.sizesNormalized
       self.photosArr = apiArr 
       // this.photosArr.concat(apiArr)
       // for(let i = 0; i<apiArr.length() ;i++){
@@ -128,7 +125,7 @@ body {
 
 .gallery-container {
   flex-grow:1; 
-  transition-property: flex-grow;
+  transition-property: flex-grow,background-color;
   transition-duration: 0.5s;
   background-color: black;
   display: flex;
