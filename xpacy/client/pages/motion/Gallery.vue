@@ -9,7 +9,8 @@
       <!-- <button type="button" class="btn btn-light" @click="next">Next</button> -->
     </div>
     <div class="demo">
-      <Motion :values="sizesNormalized"
+      <Motion ref="motionDiv"
+        :values="sizesNormalized"
         tag="div"
         class="demo-inner"
       >
@@ -17,7 +18,7 @@
           <Map 
             :width="width/2 - resizes.layout.width/2"
             :height="resizes.pictures[current].height"
-            :position="resizes.pictures[current]?resizes.pictures[current].position?resizes.pictures[current].position:null:null"
+            :position="positionCurrent"
             style="{ width:`0px`;  margin-right: `20px`;}"
           />
           <PhotosContainer
@@ -27,7 +28,14 @@
               :style="{ width: `100%`, left:`${width/2 - resizes.layout.width/2}px`, height: `${resizes.layout.height}px` }"
           >
             <template scope="pcProps">
-              <div class="gradient"/>
+      <Motion ref="motionDiv"
+        :value="priceCurrent"
+        tag="div"
+        >
+              <div  slot-scope="props" class="gradient">
+                ${{Math.floor(props.value)}}
+                </div>
+                </Motion>
               <div class="photos"
                    :style="{ left: `${pcProps.left}px` }"
               >
@@ -35,8 +43,8 @@
                      :key="i"
                      class="photo"
                      :style="{
-                        width: `${resizes.pictures[i]?resizes.pictures[i].width:500}px`, 
-                        height: `${resizes.pictures[i]?resizes.pictures[i].height:500}px`,
+                        width: `${resizes.pictures[i]?resizes.pictures[i].width:200}px`, 
+                        height: `${resizes.pictures[i]?resizes.pictures[i].height:200}px`,
                         filter: `grayscale(${current==i?10:70}%)`
                       }"
                      :src="photo.src"
@@ -55,7 +63,7 @@ import { Motion } from 'vue-motion'
 import PhotosContainer from './PhotosContainer'
 import Map from '~/components/Map'
 
-const base = 'https://github.com/posva/vue-motion/raw/master/docs/static/'
+// const base = 'https://github.com/posva/vue-motion/raw/master/docs/static/'
 
 export default {
 
@@ -65,34 +73,54 @@ export default {
       type:Array,
       default:function(){return [
         {
-          width: 300,
-          height: 450,
-          src: `${base}cat1.jpg`,
+          price: 20,
+          position: [18.99159,98.99159],
+          width: 500,
+          height: 300,
+          src: '0.png',
         },
         {
+          price: 34,
+          position: [18.99159,93.90159,],
           width: 500,
           height: 390,
-          src: `${base}cat2.jpg`,
+          src: '1.png',
         },
         {
+          price: 41,
+          position: [18.39159,99.99159,],
+          longitude: 98.99159,
+          latitude: 16.99159,
           width: 500,
           height: 330,
-          src: `${base}cat3.jpg`,
+          src: '3.png',
         },
         {
+          price: 44,
+          position: [18.29159,98.99159],
+          longitude: 98.99159,
+          latitude: 17.99159,
           width: 491,
-          height: 251,
-          src: `${base}cat4.jpg`,
+          height: 301,
+          src: '4.png',
         },
         {
+          price: 65,
+          position: [18.99159,98.99159],
+          longitude: 98.99159,
+          latitude: 14.99159,
           width: 447,
           height: 500,
-          src: `${base}cat5.jpg`,
+          src: '5.png',
         },
         {
+          price: 134,
+          position: [18.99159,98.99159],
+          longitude: 98.99159,
+          latitude: 19.99159,
           width: 320,
-          height: 154,
-          src: 'https://media.giphy.com/media/JEVqknUonZJWU/giphy.gif',
+          height: 204,
+          src: '6.png',
         },
       ]}
     }
@@ -105,6 +133,14 @@ export default {
     }
   },
   computed: {
+    priceCurrent () {
+      const current = this.photos[this.current]
+      return current.price
+    },
+    positionCurrent () {
+      const current = this.photos[this.current]
+      return current.position
+    },
     sizes () {
       const current = this.photos[this.current]
       return this.photos.map(photo => ({
@@ -113,16 +149,17 @@ export default {
       }))
     },
     sizesNormalized () {
-      return this.sizes.reduce((res, size, i) => {
-        res.pictures[i] = size
+      let normalized = this.sizes.reduce((res, size) => {
+        res.pictures.push(size)
         return res
       }, {
         layout: {
           width: this.photos[this.current].width,
-          height: this.photos[this.current].height,
+          height: this.photos[this.current].height
         },
         pictures: [],
       })
+      return normalized
     },
   },
   mounted: function () {
@@ -149,24 +186,6 @@ export default {
     handleResize: function() {
       this.width = window.innerWidth;
     },
-    leftSpace (sizes) {
-      const lefts = Array(this.photos.length)
-
-      let cumulated = 0
-      for (let i = this.current; i < this.photos.length; ++i) {
-        lefts[i] = cumulated
-        cumulated += sizes[`w${i}`]
-      }
-
-      if (this.current > 0) {
-        cumulated = 0
-        for (let i = this.current - 1; i >= 0; --i) {
-          cumulated -= sizes[`w${i}`]
-          lefts[i] = cumulated
-        }
-      }
-      return lefts
-    },
   }
 }
 </script>
@@ -182,9 +201,12 @@ export default {
 }
 .gradient {
   position: absolute;
+  font-size: 200px;
+  justify-content: center;
+  color:white;
   right:0;
   top:0;bottom: 0;
-  width:50%;
+  width:70%;
   background-image: linear-gradient(to right,transparent, black,black);
   z-index: 1;
 }
@@ -221,7 +243,7 @@ export default {
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 15px;
+  height: 10px;
   border-radius: 5px;   
   background: #d3d3d3;
   outline: none;
@@ -237,7 +259,7 @@ export default {
   height: 30px;
   border-radius: 50%; 
   opacity: 1;
-  background: rgb(76, 147, 175);
+  background: rgb(84, 175, 76);
   cursor: pointer;
 }
 
@@ -245,7 +267,7 @@ export default {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgb(76, 147, 175);
+  background: rgb(84, 175, 101);
   cursor: pointer;
 }
 

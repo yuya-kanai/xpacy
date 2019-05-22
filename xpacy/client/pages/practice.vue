@@ -67,14 +67,13 @@ export default {
         // img.src = src
         return {
           ...data,
+          position: [data.latitude,data.longitude],
           src: src,
           width: 540,
           height: 350,
         }
       })
-      console.log('original',self.photosArr)
 
-      console.log('new',apiArr)
       this.$refs.food.handleResize()
       this.$refs.food.sizesNormalized
       self.photosArr = apiArr 

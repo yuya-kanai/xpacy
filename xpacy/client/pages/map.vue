@@ -1,8 +1,8 @@
 <template>
   <div>
-    <b-button variant="danger" @click="logPosition" >Log position</b-button>
+    <!-- <b-button variant="danger" @click="logPosition" >Log position</b-button> -->
     <no-ssr>
-      <l-map class="mini-map" :zoom=13 :center="position">
+      <l-map class="mini-map" :zoom=23 :center="position">
         <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
         <l-marker :lat-lng="position" :draggable="draggable">
           <l-popup :content="popupContent"></l-popup>
@@ -17,8 +17,8 @@ export default {
   props: {
     position: {
       type:Array,
-      default:function(){return [
-        55.607741796855734, 13.018133640289308
+      default:()=>{return [
+        53.607741796855734, 12.018133640289308
       ]}
     }
   },
@@ -26,9 +26,14 @@ export default {
     draggable: true,
     popupContent: 'Sentian HQ'
   }),
+  mounted:()=>  {
+      console.log('nya',this.position);
+
+    this.logPosition()
+  },
   methods: {
     logPosition() {
-      console.log(this.position);
+      console.log('nya',this.position);
     }
   }
 };

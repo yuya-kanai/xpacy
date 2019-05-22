@@ -2,7 +2,7 @@
   <span>
     <!-- <b-button variant="danger" @click="logPosition" >Log position</b-button> -->
     <no-ssr>
-      <l-map ref="map" class="mini-map" :style="miniMap" :zoom=23 :center="position">
+      <l-map ref="map" class="mini-map" :style="miniMap" :zoom=13 :center="position">
         <l-tile-layer url="http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"></l-tile-layer>
         <l-marker :lat-lng="position">
         </l-marker>
@@ -34,10 +34,15 @@ export default {
     height: {
       type: Number,
       required: true
+    },
+    position: {
+      type: Array,
+      default: ()=> {
+         return [35.6762, 139.6503]
+      }
     }
   },
   data: () => ({
-    position: [35.6762, 139.6503],
     draggable: false,
     popupContent: 'Sentian HQ'
   }),

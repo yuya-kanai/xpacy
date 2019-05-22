@@ -22,18 +22,9 @@
       </div>
     </div>
 
-      <button :aria-label="$t('toggle_navigation')" class="navbar-toggler" type="button"
-              data-toggle="collapse" data-target="#navbarToggler"
-              aria-controls="navbarToggler" aria-expanded="false"
-      >
-        <span class="navbar-toggler-icon"/>
-      </button>
+      <div >
 
-      <div id="navbarToggler" class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-        </ul>
-
-        <h2 class="navbar-nav ml-auto">
+        <h2 >
           $250
         </h2>
       </div>
