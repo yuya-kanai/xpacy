@@ -1,17 +1,14 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
-        {{ appName }}
-      </router-link>
     <div class="btn-group dropup">
       <button type="button" class="btn btn-secondary-outline btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Tokyo
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" @click="shout('tokyo')">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" @click="shout('tokyo')">Tokyo</a>
+        <a class="dropdown-item" href="#">Singapore</a>
+        <a class="dropdown-item" href="#">Chiang Mai</a>
       </div>
     </div>
     <div class="btn-group dropup">
@@ -19,9 +16,9 @@
         Month
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Month</a>
+        <a class="dropdown-item" href="#">Week</a>
+        <a class="dropdown-item" href="#">Day</a>
       </div>
     </div>
 
@@ -34,47 +31,11 @@
 
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <locale-dropdown/>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
         </ul>
 
-        <ul class="navbar-nav ml-auto">
-          <!-- Authenticated -->
-          <li v-if="user" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-dark"
-               href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img :src="user.photo_url" class="rounded-circle profile-photo mr-1">
-              {{ user.name }}
-            </a>
-            <div class="dropdown-menu">
-              <router-link :to="{ name: 'settings.profile' }" class="dropdown-item pl-3">
-                <fa icon="cog" fixed-width/>
-                {{ $t('settings') }}
-              </router-link>
-
-              <div class="dropdown-divider"/>
-              <a class="dropdown-item pl-3" href="#" @click.prevent="logout">
-                <fa icon="sign-out-alt" fixed-width/>
-                {{ $t('logout') }}
-              </a>
-            </div>
-          </li>
-          <!-- Guest -->
-          <template v-else>
-            <li class="nav-item">
-              <router-link :to="{ name: 'login' }" class="nav-link" active-class="active">
-                {{ $t('login') }}
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link :to="{ name: 'register' }" class="nav-link" active-class="active">
-                {{ $t('register') }}
-              </router-link>
-            </li>
-          </template>
-        </ul>
+        <h2 class="navbar-nav ml-auto">
+          $250
+        </h2>
       </div>
     </div>
   </nav>
@@ -82,12 +43,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import LocaleDropdown from './LocaleDropdown'
 
 export default {
-  components: {
-    LocaleDropdown
-  },
 
   data: () => ({
     appName: process.env.appName
