@@ -1,17 +1,20 @@
 <template>
   <div class="flex-container">
     <Navbar/>
-    <fa icon="external-link-alt" />
-    <div style="flex-grow:1; background-color: white;">
-      <Gallery ref="food" :photos="photos"/>
+    <div class="gallery-container">
+      <div class="gallery-inactive"> Restaurants: $250 </div>
+      <Gallery ref="food" class="gallery" :photos="photos"/>
     </div>
-    <div style="flex-grow:1; background-color: white; ">
-      <Gallery/>
+    <div class="gallery-container">
+      <div class="gallery-inactive"> Housing: $250 </div>
+      <Gallery class="gallery"/>
     </div>
-    <div style="flex-grow:1; background-color: white">
-      <Gallery/>
+    <div class="gallery-container">
+      <div class="gallery-inactive"> Transport: $250 </div>
+      <Gallery class="gallery"/>
     </div>
     <!-- <Map/> -->
+    <BottomBar class="bottom-bar-container"/>
   </div>
 </template>
 
@@ -19,6 +22,7 @@
 <script>
 import Navbar from '~/components/Navbar'
 import Gallery from './motion/Gallery'
+import BottomBar from '../components/BottomBar'
 import axios from 'axios'
 
 axios.defaults.baseURL = process.env.apiUrl
@@ -27,6 +31,7 @@ export default {
   components: {
     Gallery,
     Navbar,
+    BottomBar
   },
   data: () => ({
     position: [55.607741796855734, 13.018133640289308],
@@ -102,6 +107,7 @@ export default {
 <style >
 html {
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -111,10 +117,68 @@ body {
 
 .flex-container {
   display: -webkit-box;
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   width:100%;
+  height:100%;
   position: absolute;
+}
+
+.gallery-container {
+  flex-grow:1; 
+  transition-property: flex-grow;
+  transition-duration: 0.5s;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery-container:hover {
+  background-color: white;
+  flex-grow:5; 
+}
+.gallery-inactive {
+  position: absolute;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  opacity: 1;
+  text-align: center;
+  font-size:80px;
+  color:white;
+  padding: 200px;
+  left:0px;right: 0px;
+  background-image: url(https://github.com/posva/vue-motion/raw/master/docs/static/cat1.jpg);
+  filter:grayscale(90%);
+  z-index: 1; 
+  background-size: cover;
+  background-position: center center;
+}
+
+.gallery-inactive:hover {
+  opacity: 0;
+}
+
+.gallery {
+  transition-property: filter;
+  transition-duration: 0.8s;
+  filter:grayscale(90%);
+  z-index: 0; 
+}
+
+.gallery:hover {
+  filter:grayscale(0%)
+}
+
+.bottom-bar-container {
+  flex-grow:1; 
+  transition-property: flex-grow;
+  transition-duration: 0.5s;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
