@@ -15,6 +15,7 @@
             :width="width/2 - resizes.layout.width/2"
             :height="resizes.pictures[current].height"
             :position="resizes.pictures[current]?resizes.pictures[current].position?resizes.pictures[current].position:null:null"
+            style="{ width:`0px`;  margin-right: `20px`;}"
           />
           <PhotosContainer
               class="container"
@@ -190,7 +191,6 @@ export default {
   position: relative;
   overflow: hidden;
   margin: auto;
-  margin-left: 20px;
   max-width: 100%;
 }
 
